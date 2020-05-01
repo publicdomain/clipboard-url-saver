@@ -54,7 +54,7 @@ namespace ClipboardUrlSaver
             this.saveFileTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.browseButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
-            this.directoryTextBox = new System.Windows.Forms.TextBox();
+            this.saveFileTextBox = new System.Windows.Forms.TextBox();
             this.urlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.urlCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +69,8 @@ namespace ClipboardUrlSaver
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,12 +87,12 @@ namespace ClipboardUrlSaver
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.notifyContextMenuStrip.SuspendLayout();
             this.monitorGroupBox.SuspendLayout();
             this.mainTableLayoutPanel.SuspendLayout();
@@ -216,7 +218,7 @@ namespace ClipboardUrlSaver
             this.saveFileTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
             this.saveFileTableLayoutPanel.Controls.Add(this.browseButton, 0, 0);
             this.saveFileTableLayoutPanel.Controls.Add(this.openButton, 1, 0);
-            this.saveFileTableLayoutPanel.Controls.Add(this.directoryTextBox, 0, 0);
+            this.saveFileTableLayoutPanel.Controls.Add(this.saveFileTextBox, 0, 0);
             this.saveFileTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.saveFileTableLayoutPanel.Location = new System.Drawing.Point(3, 16);
             this.saveFileTableLayoutPanel.Name = "saveFileTableLayoutPanel";
@@ -253,13 +255,14 @@ namespace ClipboardUrlSaver
             this.openButton.UseVisualStyleBackColor = true;
             this.openButton.Click += new System.EventHandler(this.OnOpenButtonClick);
             // 
-            // directoryTextBox
+            // saveFileTextBox
             // 
-            this.directoryTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.directoryTextBox.Location = new System.Drawing.Point(3, 5);
-            this.directoryTextBox.Name = "directoryTextBox";
-            this.directoryTextBox.Size = new System.Drawing.Size(238, 20);
-            this.directoryTextBox.TabIndex = 1;
+            this.saveFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveFileTextBox.Location = new System.Drawing.Point(3, 5);
+            this.saveFileTextBox.Name = "saveFileTextBox";
+            this.saveFileTextBox.Size = new System.Drawing.Size(238, 20);
+            this.saveFileTextBox.TabIndex = 1;
+            this.saveFileTextBox.Text = "toRead.html";
             // 
             // urlTableLayoutPanel
             // 
@@ -408,13 +411,29 @@ namespace ClipboardUrlSaver
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.textToolStripMenuItem,
+                                    this.hTMLToolStripMenuItem});
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.saveToolStripMenuItem.Text = "&Save as...";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.OnSaveToolStripMenuItemClick);
+            // 
+            // textToolStripMenuItem
+            // 
+            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            this.textToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.textToolStripMenuItem.Text = "&Text";
+            this.textToolStripMenuItem.Click += new System.EventHandler(this.OnTextToolStripMenuItemClick);
+            // 
+            // hTMLToolStripMenuItem
+            // 
+            this.hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
+            this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.hTMLToolStripMenuItem.Text = "&HTML";
+            this.hTMLToolStripMenuItem.Click += new System.EventHandler(this.OnHTMLToolStripMenuItemClick);
             // 
             // toolStripSeparator4
             // 
@@ -559,18 +578,23 @@ namespace ClipboardUrlSaver
             this.mainStatusStrip.SizingGrip = false;
             this.mainStatusStrip.TabIndex = 10;
             // 
-            // saveFileDialog
+            // saveTextFileDialog
             // 
-            this.saveFileDialog.DefaultExt = "txt";
-            this.saveFileDialog.FileName = "PatternTarget.txt";
-            this.saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-            this.saveFileDialog.Title = "Save pattern file";
+            this.saveTextFileDialog.DefaultExt = "txt";
+            this.saveTextFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.saveTextFileDialog.Title = "Save text file";
             // 
             // openFileDialog
             // 
             this.openFileDialog.DefaultExt = "txt";
-            this.openFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-            this.openFileDialog.Title = "Open pattern file";
+            this.openFileDialog.Filter = "Text Files (*.txt)|*.txt|HTML Files|*.htm;*.html|All files (*.*)|*.*";
+            this.openFileDialog.Title = "Open file with URLs";
+            // 
+            // saveHtmlFileDialog
+            // 
+            this.saveHtmlFileDialog.DefaultExt = "html";
+            this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
+            this.saveHtmlFileDialog.Title = "Save HTML file";
             // 
             // MainForm
             // 
@@ -600,8 +624,11 @@ namespace ClipboardUrlSaver
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem hTMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveHtmlFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveTextFileDialog;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -622,7 +649,6 @@ namespace ClipboardUrlSaver
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.CheckedListBox urlCheckedListBox;
         private System.Windows.Forms.TableLayoutPanel urlTableLayoutPanel;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.ToolStripMenuItem hideCloseButtonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runAtStartupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
@@ -633,7 +659,7 @@ namespace ClipboardUrlSaver
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem headquartersPatreoncomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sourceCodeGithubcomToolStripMenuItem;
-        private System.Windows.Forms.TextBox directoryTextBox;
+        private System.Windows.Forms.TextBox saveFileTextBox;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.TableLayoutPanel saveFileTableLayoutPanel;

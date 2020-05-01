@@ -9,6 +9,7 @@ namespace ClipboardUrlSaver
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.IO;
     using System.Windows.Forms;
 
     /// <summary>
@@ -62,7 +63,15 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnBrowseButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Set file name
+            this.saveHtmlFileDialog.FileName = this.saveFileTextBox.Text;
+
+            // Open save file dialog
+            if (this.saveHtmlFileDialog.ShowDialog() == DialogResult.OK && this.saveHtmlFileDialog.FileName.Length > 0)
+            {
+                // Set file in text box
+                this.saveFileTextBox.Text = this.saveHtmlFileDialog.FileName;
+            }
         }
 
         /// <summary>
@@ -111,6 +120,26 @@ namespace ClipboardUrlSaver
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
         private void OnMinimizeToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // TODO Add code
+        }
+
+        /// <summary>
+        /// Handles the text tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnTextToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // TODO Add code
+        }
+
+        /// <summary>
+        /// Handles the HTML Tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnHTMLToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO Add code
         }
