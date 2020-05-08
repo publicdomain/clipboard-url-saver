@@ -78,13 +78,14 @@ namespace ClipboardUrlSaver
         	this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+        	this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
         	this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
         	this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
         	this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
         	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
         	this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-        	this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.notifyContextMenuStrip.SuspendLayout();
         	this.monitorGroupBox.SuspendLayout();
         	this.mainTableLayoutPanel.SuspendLayout();
@@ -445,9 +446,10 @@ namespace ClipboardUrlSaver
         	// optionsToolStripMenuItem
         	// 
         	this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+        	        	        	this.alwaysOnTopToolStripMenuItem,
+        	        	        	this.hideCloseButtonToolStripMenuItem,
         	        	        	this.runAtStartupToolStripMenuItem,
         	        	        	this.startInTrayToolStripMenuItem,
-        	        	        	this.hideCloseButtonToolStripMenuItem,
         	        	        	this.toolStripSeparator3,
         	        	        	this.prefixWithhttpsToolStripMenuItem});
         	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
@@ -479,6 +481,15 @@ namespace ClipboardUrlSaver
         	// 
         	this.toolStripSeparator3.Name = "toolStripSeparator3";
         	this.toolStripSeparator3.Size = new System.Drawing.Size(179, 6);
+        	// 
+        	// prefixWithhttpsToolStripMenuItem
+        	// 
+        	this.prefixWithhttpsToolStripMenuItem.Checked = true;
+        	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
+        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+        	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
+        	this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
         	// 
         	// mainToolStripStatusLabel
         	// 
@@ -522,14 +533,12 @@ namespace ClipboardUrlSaver
         	this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
         	this.saveHtmlFileDialog.Title = "Save HTML file";
         	// 
-        	// prefixWithhttpsToolStripMenuItem
+        	// alwaysOnTopToolStripMenuItem
         	// 
-        	this.prefixWithhttpsToolStripMenuItem.Checked = true;
-        	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-        	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
-        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-        	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
-        	this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
+        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
+        	this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
         	// 
         	// MainForm
         	// 
@@ -560,6 +569,7 @@ namespace ClipboardUrlSaver
         	this.ResumeLayout(false);
         	this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prefixWithhttpsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hTMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;

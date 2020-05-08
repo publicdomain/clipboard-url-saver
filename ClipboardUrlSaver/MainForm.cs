@@ -238,6 +238,20 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
+        /// Handles the always on top tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnAlwaysOnTopToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Toggle checked state
+            this.alwaysOnTopToolStripMenuItem.Checked = !this.alwaysOnTopToolStripMenuItem.Checked;
+
+            // Set topmost state
+            this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
+        }
+
+        /// <summary>
         /// Handles the run at startup tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
