@@ -59,20 +59,25 @@ namespace ClipboardUrlSaver
                         // Set clipboard text variable
                         string clipboardText = Clipboard.GetText().Trim();
 
-                        /* Check for a valid URI */
+                        // Chek if must prepend "https://"
+                        if (this.prefixWithhttpsToolStripMenuItem.Checked && !Uri.IsWellFormedUriString(clipboardText, UriKind.Absolute))
+                        {
+                            // Add prefix to clipboard text
+                            clipboardText = $"https://{clipboardText}";
+                        }
 
-                        // Test for URI
+                        // Check for a valid URI
                         if (Uri.TryCreate(clipboardText, UriKind.Absolute, out var uri) &&
-                        (uri.Scheme == Uri.UriSchemeHttps ||
-                        uri.Scheme == Uri.UriSchemeHttp ||
-                        uri.Scheme == Uri.UriSchemeFtp ||
-                        uri.Scheme == Uri.UriSchemeMailto ||
-                        uri.Scheme == Uri.UriSchemeFile ||
-                        uri.Scheme == Uri.UriSchemeNews ||
-                        uri.Scheme == Uri.UriSchemeNntp ||
-                        uri.Scheme == Uri.UriSchemeGopher ||
-                        uri.Scheme == Uri.UriSchemeNetTcp ||
-                        uri.Scheme == Uri.UriSchemeNetPipe))
+                            (uri.Scheme == Uri.UriSchemeHttps ||
+                            uri.Scheme == Uri.UriSchemeHttp ||
+                            uri.Scheme == Uri.UriSchemeFtp ||
+                            uri.Scheme == Uri.UriSchemeMailto ||
+                            uri.Scheme == Uri.UriSchemeFile ||
+                            uri.Scheme == Uri.UriSchemeNews ||
+                            uri.Scheme == Uri.UriSchemeNntp ||
+                            uri.Scheme == Uri.UriSchemeGopher ||
+                            uri.Scheme == Uri.UriSchemeNetTcp ||
+                            uri.Scheme == Uri.UriSchemeNetPipe))
                         {
                             // Add to valid list
                             this.urlCheckedListBox.Items.Add(clipboardText);
@@ -260,6 +265,17 @@ namespace ClipboardUrlSaver
         private void OnHideCloseButtonToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO Add code
+        }
+
+        /// <summary>
+        /// Handles the prefix https tool strip menu item click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnPrefixWithhttpsToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Toggle check state
+            this.prefixWithhttpsToolStripMenuItem.Checked = !this.prefixWithhttpsToolStripMenuItem.Checked;
         }
 
         /// <summary>
