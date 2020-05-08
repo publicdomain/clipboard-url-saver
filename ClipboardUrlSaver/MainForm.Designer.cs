@@ -77,15 +77,6 @@ namespace ClipboardUrlSaver
             this.runAtStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rememberSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rememberLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.askOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -339,6 +330,7 @@ namespace ClipboardUrlSaver
             this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
             this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
+            this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
             // 
             // headquartersPatreoncomToolStripMenuItem
             // 
@@ -346,6 +338,7 @@ namespace ClipboardUrlSaver
             this.headquartersPatreoncomToolStripMenuItem.Name = "headquartersPatreoncomToolStripMenuItem";
             this.headquartersPatreoncomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.headquartersPatreoncomToolStripMenuItem.Text = "Headquarters @ Patreon.com";
+            this.headquartersPatreoncomToolStripMenuItem.Click += new System.EventHandler(this.OnHeadquartersPatreoncomToolStripMenuItemClick);
             // 
             // helpToolStripMenuItem
             // 
@@ -420,6 +413,7 @@ namespace ClipboardUrlSaver
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.saveToolStripMenuItem.Text = "&Save as...";
+            this.saveToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSaveToolStripMenuItemDropDownItemClicked);
             // 
             // textToolStripMenuItem
             // 
@@ -445,6 +439,7 @@ namespace ClipboardUrlSaver
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
             // 
             // optionsToolStripMenuItem
             // 
@@ -452,9 +447,6 @@ namespace ClipboardUrlSaver
                                     this.runAtStartupToolStripMenuItem,
                                     this.startInTrayToolStripMenuItem,
                                     this.hideCloseButtonToolStripMenuItem,
-                                    this.windowToolStripMenuItem,
-                                    this.setBrowserToolStripMenuItem,
-                                    this.askOnToolStripMenuItem,
                                     this.toolStripSeparator3});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -465,89 +457,21 @@ namespace ClipboardUrlSaver
             this.runAtStartupToolStripMenuItem.Name = "runAtStartupToolStripMenuItem";
             this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.runAtStartupToolStripMenuItem.Text = "&Run at startup";
+            this.runAtStartupToolStripMenuItem.Click += new System.EventHandler(this.OnRunAtStartupToolStripMenuItemClick);
             // 
             // startInTrayToolStripMenuItem
             // 
             this.startInTrayToolStripMenuItem.Name = "startInTrayToolStripMenuItem";
             this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.startInTrayToolStripMenuItem.Text = "&Start in tray";
+            this.startInTrayToolStripMenuItem.Click += new System.EventHandler(this.OnStartInTrayToolStripMenuItemClick);
             // 
             // hideCloseButtonToolStripMenuItem
             // 
             this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
             this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
-            // 
-            // windowToolStripMenuItem
-            // 
-            this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                                    this.rememberSizeToolStripMenuItem,
-                                    this.rememberLocationToolStripMenuItem});
-            this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.windowToolStripMenuItem.Text = "&Window";
-            // 
-            // rememberSizeToolStripMenuItem
-            // 
-            this.rememberSizeToolStripMenuItem.Checked = true;
-            this.rememberSizeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rememberSizeToolStripMenuItem.Name = "rememberSizeToolStripMenuItem";
-            this.rememberSizeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.rememberSizeToolStripMenuItem.Text = "&Remember size";
-            // 
-            // rememberLocationToolStripMenuItem
-            // 
-            this.rememberLocationToolStripMenuItem.Checked = true;
-            this.rememberLocationToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rememberLocationToolStripMenuItem.Name = "rememberLocationToolStripMenuItem";
-            this.rememberLocationToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.rememberLocationToolStripMenuItem.Text = "&Remember location";
-            // 
-            // setBrowserToolStripMenuItem
-            // 
-            this.setBrowserToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                                    this.defaultToolStripMenuItem,
-                                    this.customToolStripMenuItem});
-            this.setBrowserToolStripMenuItem.Name = "setBrowserToolStripMenuItem";
-            this.setBrowserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.setBrowserToolStripMenuItem.Text = "&Set browser";
-            // 
-            // defaultToolStripMenuItem
-            // 
-            this.defaultToolStripMenuItem.Checked = true;
-            this.defaultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.defaultToolStripMenuItem.Text = "&Default";
-            // 
-            // customToolStripMenuItem
-            // 
-            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.customToolStripMenuItem.Text = "&Custom";
-            // 
-            // askOnToolStripMenuItem
-            // 
-            this.askOnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                                    this.deleteToolStripMenuItem,
-                                    this.clearToolStripMenuItem});
-            this.askOnToolStripMenuItem.Name = "askOnToolStripMenuItem";
-            this.askOnToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.askOnToolStripMenuItem.Text = "&Ask on";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "&Delete";
-            // 
-            // clearToolStripMenuItem
-            // 
-            this.clearToolStripMenuItem.Checked = true;
-            this.clearToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.clearToolStripMenuItem.Text = "&Clear";
+            this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
             // 
             // toolStripSeparator3
             // 
@@ -609,6 +533,7 @@ namespace ClipboardUrlSaver
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard URL Saver";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
             this.notifyContextMenuStrip.ResumeLayout(false);
             this.monitorGroupBox.ResumeLayout(false);
             this.mainTableLayoutPanel.ResumeLayout(false);
@@ -630,16 +555,7 @@ namespace ClipboardUrlSaver
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveTextFileDialog;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem askOnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rememberLocationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rememberSizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startInTrayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem defaultToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setBrowserToolStripMenuItem;
         private System.Windows.Forms.Button deleteCheckedButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
