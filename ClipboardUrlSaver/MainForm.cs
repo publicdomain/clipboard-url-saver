@@ -136,7 +136,12 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnDeleteCheckedButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Process until there are no checked items
+            while (this.urlCheckedListBox.CheckedItems.Count > 0)
+            {
+                // Remove the first checked one
+                this.urlCheckedListBox.Items.RemoveAt(this.urlCheckedListBox.CheckedIndices[0]);
+            }
         }
 
         /// <summary>
