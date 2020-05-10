@@ -79,11 +79,15 @@ namespace ClipboardUrlSaver
                             uri.Scheme == Uri.UriSchemeNetTcp ||
                             uri.Scheme == Uri.UriSchemeNetPipe))
                         {
-                            // Add to valid list
-                            this.urlCheckedListBox.Items.Add(clipboardText);
+                            // Check for duplicates
+                            if (!this.urlCheckedListBox.Items.Contains(clipboardText))
+                            {
+                                // Add to valid list
+                                this.urlCheckedListBox.Items.Add(clipboardText);
 
-                            // Increment copy count
-                            this.urlCount++;
+                                // Increment copy count
+                                this.urlCount++;
+                            }
                         }
                     }
 
