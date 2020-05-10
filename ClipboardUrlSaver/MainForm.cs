@@ -124,13 +124,35 @@ namespace ClipboardUrlSaver
         private static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
         /// <summary>
-        /// Handles the pause resume button click event.
+        /// Handles the pause/resume button click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
         private void OnPauseResumeButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Check if must pause
+            if (this.pauseResumeButton.Text.StartsWith("&P", StringComparison.InvariantCulture))
+            {
+                // Remove clipboard listener
+                RemoveClipboardFormatListener(this.Handle);
+
+                // Update monitor status
+                this.monitorGroupBox.Text = "Monitor is: INACTIVE";
+
+                // Set button text
+                this.pauseResumeButton.Text = "&Resume";
+            }
+            else
+            {
+                // Add clipboard listener
+                AddClipboardFormatListener(this.Handle);
+
+                // Update monitor status
+                this.monitorGroupBox.Text = "Monitor is: ACTIVE";
+
+                // Set button text
+                this.pauseResumeButton.Text = "&Pause";
+            }
         }
 
         /// <summary>
