@@ -136,12 +136,18 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnDeleteCheckedButtonClick(object sender, EventArgs e)
         {
+            // Prevent drawing
+            this.urlCheckedListBox.BeginUpdate();
+
             // Process until there are no checked items
             while (this.urlCheckedListBox.CheckedItems.Count > 0)
             {
                 // Remove the first checked one
                 this.urlCheckedListBox.Items.RemoveAt(this.urlCheckedListBox.CheckedIndices[0]);
             }
+
+            // Restore drawing
+            this.urlCheckedListBox.EndUpdate();
         }
 
         /// <summary>
