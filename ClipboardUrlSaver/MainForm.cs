@@ -157,7 +157,12 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnClearButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Ask user
+            if (this.urlCheckedListBox.Items.Count > 0 && MessageBox.Show($"Would you like to clear {this.urlCheckedListBox.Items.Count} items?", "Clear", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                // Clear all items
+                this.urlCheckedListBox.Items.Clear();
+            }
         }
 
         /// <summary>
