@@ -74,18 +74,19 @@ namespace ClipboardUrlSaver
         	this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
         	this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.runAtStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
         	this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.keepListBetweenRunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
         	this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
         	this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
         	this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
         	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
         	this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.notifyContextMenuStrip.SuspendLayout();
         	this.monitorGroupBox.SuspendLayout();
         	this.mainTableLayoutPanel.SuspendLayout();
@@ -451,45 +452,61 @@ namespace ClipboardUrlSaver
         	        	        	this.runAtStartupToolStripMenuItem,
         	        	        	this.startInTrayToolStripMenuItem,
         	        	        	this.toolStripSeparator3,
-        	        	        	this.prefixWithhttpsToolStripMenuItem});
+        	        	        	this.prefixWithhttpsToolStripMenuItem,
+        	        	        	this.keepListBetweenRunsToolStripMenuItem});
         	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
         	this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
         	this.optionsToolStripMenuItem.Text = "&Options";
         	// 
+        	// alwaysOnTopToolStripMenuItem
+        	// 
+        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
+        	this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
+        	// 
+        	// hideCloseButtonToolStripMenuItem
+        	// 
+        	this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
+        	this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+        	this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
+        	this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
+        	// 
         	// runAtStartupToolStripMenuItem
         	// 
         	this.runAtStartupToolStripMenuItem.Name = "runAtStartupToolStripMenuItem";
-        	this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+        	this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.runAtStartupToolStripMenuItem.Text = "&Run at startup";
         	this.runAtStartupToolStripMenuItem.Click += new System.EventHandler(this.OnRunAtStartupToolStripMenuItemClick);
         	// 
         	// startInTrayToolStripMenuItem
         	// 
         	this.startInTrayToolStripMenuItem.Name = "startInTrayToolStripMenuItem";
-        	this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+        	this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.startInTrayToolStripMenuItem.Text = "&Start in tray";
         	this.startInTrayToolStripMenuItem.Click += new System.EventHandler(this.OnStartInTrayToolStripMenuItemClick);
-        	// 
-        	// hideCloseButtonToolStripMenuItem
-        	// 
-        	this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
-        	this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-        	this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
-        	this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
         	// 
         	// toolStripSeparator3
         	// 
         	this.toolStripSeparator3.Name = "toolStripSeparator3";
-        	this.toolStripSeparator3.Size = new System.Drawing.Size(179, 6);
+        	this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
         	// 
         	// prefixWithhttpsToolStripMenuItem
         	// 
         	this.prefixWithhttpsToolStripMenuItem.Checked = true;
         	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
-        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
         	this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
+        	// 
+        	// keepListBetweenRunsToolStripMenuItem
+        	// 
+        	this.keepListBetweenRunsToolStripMenuItem.Checked = true;
+        	this.keepListBetweenRunsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.keepListBetweenRunsToolStripMenuItem.Name = "keepListBetweenRunsToolStripMenuItem";
+        	this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+        	this.keepListBetweenRunsToolStripMenuItem.Text = "&Keep list between runs";
         	// 
         	// mainToolStripStatusLabel
         	// 
@@ -533,13 +550,6 @@ namespace ClipboardUrlSaver
         	this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
         	this.saveHtmlFileDialog.Title = "Save HTML file";
         	// 
-        	// alwaysOnTopToolStripMenuItem
-        	// 
-        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
-        	this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
-        	// 
         	// MainForm
         	// 
         	this.AcceptButton = this.pauseResumeButton;
@@ -554,6 +564,8 @@ namespace ClipboardUrlSaver
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         	this.Text = "Clipboard URL Saver";
         	this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
+        	this.Shown += new System.EventHandler(this.OnMainFormShown);
+        	this.Resize += new System.EventHandler(this.OnMainFormResize);
         	this.notifyContextMenuStrip.ResumeLayout(false);
         	this.monitorGroupBox.ResumeLayout(false);
         	this.mainTableLayoutPanel.ResumeLayout(false);
@@ -569,6 +581,7 @@ namespace ClipboardUrlSaver
         	this.ResumeLayout(false);
         	this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem keepListBetweenRunsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prefixWithhttpsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hTMLToolStripMenuItem;

@@ -66,7 +66,7 @@ namespace ClipboardUrlSaver
                             clipboardText = $"https://{clipboardText}";
                         }
 
-                        // Check for a valid URI
+                        /*// Check for a valid URI
                         if (Uri.TryCreate(clipboardText, UriKind.Absolute, out var uri) &&
                             (uri.Scheme == Uri.UriSchemeHttps ||
                             uri.Scheme == Uri.UriSchemeHttp ||
@@ -88,7 +88,7 @@ namespace ClipboardUrlSaver
                                 // Increment copy count
                                 this.urlCount++;
                             }
-                        }
+                        }*/
                     }
 
                     // Halt flow
@@ -394,6 +394,38 @@ namespace ClipboardUrlSaver
         {
             // Remove clipboard listener
             RemoveClipboardFormatListener(this.Handle);
+        }
+
+        /// <summary>
+        /// Handles the main form shown event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnMainFormShown(object sender, EventArgs e)
+        {
+            // TODO Add code
+        }
+
+        /// <summary>
+        /// Handles the main form resize event.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        private void OnMainFormResize(object sender, EventArgs e)
+        {
+            // TODO Add code 
+        }
+
+        /// <summary>
+        /// Sends the program to the system tray.
+        /// </summary>
+        private void SendToSystemTray()
+        {
+            // Hide main form
+            this.Hide();
+
+            // Show notify icon 
+            this.mainNotifyIcon.Visible = true;
         }
     }
 }
