@@ -427,5 +427,29 @@ namespace ClipboardUrlSaver
             // Show notify icon 
             this.mainNotifyIcon.Visible = true;
         }
+
+        /// <summary>
+        /// Restores the window back from system tray to the foreground.
+        /// </summary>
+        private void RestoreFromSystemTray()
+        {
+            // Make form visible again
+            this.Show();
+
+            // Return window back to normal
+            this.WindowState = FormWindowState.Normal;
+
+            // Make it topmost
+            this.TopMost = true;
+
+            // Bring to the front of the Z-order
+            this.BringToFront();
+
+            // Reset topmost
+            this.TopMost = false;
+
+            // Hide system tray icon
+            this.mainNotifyIcon.Visible = false;
+        }
     }
 }
