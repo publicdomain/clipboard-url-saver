@@ -30,6 +30,11 @@ namespace ClipboardUrlSaver
         private int urlCount = 0;
 
         /// <summary>
+        /// The settings data.
+        /// </summary>
+        private SettingsData settingsData = new SettingsData();
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ClipboardUrlSaver.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -311,7 +316,7 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnStartInTrayToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code 
+            // TODO Add code
         }
 
         /// <summary>
@@ -321,7 +326,14 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnHideCloseButtonToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Toggle hide close button check box
+            this.hideCloseButtonToolStripMenuItem.Checked = !this.hideCloseButtonToolStripMenuItem.Checked;
+
+            // Set form's control box visibility
+            this.ControlBox = !this.hideCloseButtonToolStripMenuItem.Checked;
+
+            // Set control box visibility on settings data
+            this.settingsData.HideCloseButton = this.hideCloseButtonToolStripMenuItem.Checked;
         }
 
         /// <summary>
