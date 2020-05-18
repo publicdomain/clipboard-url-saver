@@ -256,7 +256,8 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnMinimizeToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Minimize program window
+            this.WindowState = FormWindowState.Minimized;
         }
 
         /// <summary>
