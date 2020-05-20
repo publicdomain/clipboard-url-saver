@@ -14,7 +14,7 @@ namespace ClipboardUrlSaver
     public class SettingsData
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:MultilingualWordCounter.SettingsData"/> class.
+        /// Initializes a new instance of the <see cref="T:ClipboardUrlSaver.SettingsData"/> class.
         /// </summary>
         public SettingsData()
         {
@@ -22,10 +22,10 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="T:MultilingualWordCounter.SettingsData"/> runs at startup.
+        /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> is always on top.
         /// </summary>
-        /// <value><c>true</c> if run at startup; otherwise, <c>false</c>.</value>
-        public bool RunAtStartup { get; set; } = true;
+        /// <value><c>true</c> if always on top; otherwise, <c>false</c>.</value>
+        public bool AlwaysOnTop { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:MultilingualWordCounter.SettingsData"/> hides the close button.
@@ -34,9 +34,27 @@ namespace ClipboardUrlSaver
         public bool HideCloseButton { get; set; } = false;
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> start in tray.
+        /// Gets or sets a value indicating whether this <see cref="T:MultilingualWordCounter.SettingsData"/> runs at startup.
+        /// </summary>
+        /// <value><c>true</c> if run at startup; otherwise, <c>false</c>.</value>
+        public bool RunAtStartup { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> starts in tray.
         /// </summary>
         /// <value><c>true</c> if start in tray; otherwise, <c>false</c>.</value>
         public bool StartInTray { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether <see cref="T:ClipboardUrlSaver.SettingsData"/> is prefixed.
+        /// </summary>
+        /// <value><c>true</c> if prefix; otherwise, <c>false</c>.</value>
+        public bool Prefix { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> keeps URL list between runs.
+        /// </summary>
+        /// <value><c>true</c> if keep list; otherwise, <c>false</c>.</value>
+        public bool KeepList { get; set; } = true;
     }
 }

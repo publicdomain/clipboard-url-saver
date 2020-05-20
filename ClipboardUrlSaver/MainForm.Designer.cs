@@ -111,12 +111,14 @@ namespace ClipboardUrlSaver
         	this.showToolStripMenuItem.Name = "showToolStripMenuItem";
         	this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
         	this.showToolStripMenuItem.Text = "&Show";
+        	this.showToolStripMenuItem.Click += new System.EventHandler(this.OnShowToolStripMenuItemClick);
         	// 
         	// notifyExitToolStripMenuItem
         	// 
         	this.notifyExitToolStripMenuItem.Name = "notifyExitToolStripMenuItem";
         	this.notifyExitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
         	this.notifyExitToolStripMenuItem.Text = "&Exit";
+        	this.notifyExitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
         	// 
         	// minimizeToolStripMenuItem
         	// 
@@ -152,7 +154,10 @@ namespace ClipboardUrlSaver
         	// mainNotifyIcon
         	// 
         	this.mainNotifyIcon.ContextMenuStrip = this.notifyContextMenuStrip;
+        	this.mainNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("mainNotifyIcon.Icon")));
         	this.mainNotifyIcon.Text = "Click to show";
+        	this.mainNotifyIcon.Visible = true;
+        	this.mainNotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnMainNotifyIconMouseClick);
         	// 
         	// monitorGroupBox
         	// 

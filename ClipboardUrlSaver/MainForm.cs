@@ -297,6 +297,9 @@ namespace ClipboardUrlSaver
 
             // Set topmost state
             this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.AlwaysOnTop = this.TopMost;
         }
 
         /// <summary>
@@ -422,8 +425,8 @@ namespace ClipboardUrlSaver
         /// <summary>
         /// Handles the main form resize event.
         /// </summary>
-        /// <param name="sender">Sender.</param>
-        /// <param name="e">E.</param>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnMainFormResize(object sender, EventArgs e)
         {
             // Check for minimized state
@@ -468,6 +471,26 @@ namespace ClipboardUrlSaver
 
             // Hide system tray icon
             this.mainNotifyIcon.Visible = false;
+        }
+
+        /// <summary>
+        /// Handles the show tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnShowToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // TODO Add code
+        }
+
+        /// <summary>
+        /// Ons the main notify icon mouse click.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        private void OnMainNotifyIconMouseClick(object sender, MouseEventArgs e)
+        {
+            // TODO Add code
         }
     }
 }
