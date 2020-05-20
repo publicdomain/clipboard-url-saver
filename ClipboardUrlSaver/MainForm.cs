@@ -484,13 +484,18 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Ons the main notify icon mouse click.
+        /// Handles the main notify icon mouse click event.
         /// </summary>
-        /// <param name="sender">Sender.</param>
-        /// <param name="e">E.</param>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnMainNotifyIconMouseClick(object sender, MouseEventArgs e)
         {
-            // TODO Add code
+            // Check for left click
+            if (e.Button == MouseButtons.Left)
+            {
+                // Restore window 
+                this.RestoreFromSystemTray();
+            }
         }
     }
 }
