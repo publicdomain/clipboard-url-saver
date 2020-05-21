@@ -13,6 +13,7 @@ namespace ClipboardUrlSaver
     using System.Runtime.InteropServices;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// Description of MainForm.
@@ -495,6 +496,22 @@ namespace ClipboardUrlSaver
             {
                 // Restore window 
                 this.RestoreFromSystemTray();
+            }
+        }
+
+        /// <summary>
+        /// Saves the settings data.
+        /// </summary>
+        private void SaveSettingsData()
+        {
+            // Use stream writer
+            using (StreamWriter streamWriter = new StreamWriter("SettingsData.txt", false))
+            {
+                // Set xml serialzer
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsData));
+
+                // Serialize settings data
+                xmlSerializer.Serialize(streamWriter, this.settingsData);
             }
         }
     }
