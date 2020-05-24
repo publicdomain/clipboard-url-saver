@@ -8,6 +8,7 @@ namespace ClipboardUrlSaver
     // Directives
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.IO;
     using System.Runtime.InteropServices;
@@ -399,7 +400,8 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnSourceCodeGithubcomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open GitHub
+            Process.Start("https://github.com/publicdomain");
         }
 
         /// <summary>
