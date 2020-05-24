@@ -514,5 +514,22 @@ namespace ClipboardUrlSaver
                 xmlSerializer.Serialize(streamWriter, this.settingsData);
             }
         }
+
+        /// <summary>
+        /// Loads the settings data.
+        /// </summary>
+        /// <returns>The settings data.</returns>ing
+        private SettingsData LoadSettingsData()
+        {
+            // Use file stream
+            using (FileStream fileStream = File.OpenRead("SettingsData.txt"))
+            {
+                // Set xml serialzer
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsData));
+
+                // Return populated settings data
+                return xmlSerializer.Deserialize(fileStream) as SettingsData;
+            }
+        }
     }
 }
