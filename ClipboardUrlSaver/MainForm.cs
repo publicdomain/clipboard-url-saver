@@ -11,10 +11,12 @@ namespace ClipboardUrlSaver
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
+    using System.Reflection;
     using System.Runtime.InteropServices;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using System.Xml.Serialization;
+    using Microsoft.Win32;
 
     /// <summary>
     /// Description of MainForm.
@@ -37,6 +39,26 @@ namespace ClipboardUrlSaver
         private SettingsData settingsData = new SettingsData();
 
         /// <summary>
+        /// The assembly version.
+        /// </summary>
+        private Version assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
+
+        /// <summary>
+        /// The semantic version.
+        /// </summary>
+        private string semanticVersion = string.Empty;
+
+        /// <summary>
+        /// The associated icon.
+        /// </summary>
+        private Icon associatedIcon = null;
+
+        /// <summary>
+        /// The friendly name of the program.
+        /// </summary>
+        private string friendlyName = "Clipboard URL saver";
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ClipboardUrlSaver.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -44,8 +66,35 @@ namespace ClipboardUrlSaver
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
 
+            // Set notify icon
+            this.mainNotifyIcon.Icon = this.Icon;
+
+            // Set semantic version
+            this.semanticVersion = this.assemblyVersion.Major + "." + this.assemblyVersion.Minor + "." + this.assemblyVersion.Build;
+
+            // TODO Set current directory [can be made conditional to: args[1] == "/autostart"]
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
+
             // Add clipboard listener
             AddClipboardFormatListener(this.Handle);
+
+            /* Process settings */
+
+            // Set settings file path
+            var settingsFilePath = "SettingsData.txt";
+
+            // Check for settings data file
+            if (!File.Exists(settingsFilePath))
+            {
+                // Not present, assume first run and create it
+                this.SaveSettingsData();
+            }
+
+            // Populate settings data
+            this.settingsData = this.LoadSettingsData();
+
+            // Set registry entry based on settings data
+            this.ProcessRunAtStartupRegistry();
         }
 
         /// <summary>
@@ -159,6 +208,32 @@ namespace ClipboardUrlSaver
 
                 // Set button text
                 this.pauseResumeButton.Text = "&Pause";
+            }
+        }
+
+        /// <summary>
+        /// Processes the run at startup registry action.
+        /// </summary>
+        private void ProcessRunAtStartupRegistry()
+        {
+            // Open registry key
+            using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+            {
+                // Check for run at startup in settings data
+                if (this.settingsData.RunAtStartup)
+                {
+                    // Add app value
+                    registryKey.SetValue(Application.ProductName, $"\"{Application.ExecutablePath}\" /autostart");
+                }
+                else
+                {
+                    // Check for app value
+                    if (registryKey.GetValue(Application.ProductName) != null)
+                    {
+                        // Erase app value
+                        registryKey.DeleteValue(Application.ProductName, false);
+                    }
+                }
             }
         }
 
