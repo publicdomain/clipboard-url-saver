@@ -75,8 +75,8 @@ namespace ClipboardUrlSaver
             // TODO Set current directory [can be made conditional to: args[1] == "/autostart"]
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 
-            // Add clipboard listener
-            AddClipboardFormatListener(this.Handle);
+            // Set initial file
+            this.saveFileTextBox.Text = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "toRead.html");
 
             /* Process settings */
 
@@ -95,6 +95,11 @@ namespace ClipboardUrlSaver
 
             // Set registry entry based on settings data
             this.ProcessRunAtStartupRegistry();
+
+            /* Clipboard */
+
+            // Add clipboard listener
+            AddClipboardFormatListener(this.Handle);
         }
 
         /// <summary>
@@ -122,7 +127,7 @@ namespace ClipboardUrlSaver
                             clipboardText = $"https://{clipboardText}";
                         }
 
-                        /*// Check for a valid URI
+                        // Check for a valid URI
                         if (Uri.TryCreate(clipboardText, UriKind.Absolute, out var uri) &&
                             (uri.Scheme == Uri.UriSchemeHttps ||
                             uri.Scheme == Uri.UriSchemeHttp ||
@@ -144,7 +149,7 @@ namespace ClipboardUrlSaver
                                 // Increment copy count
                                 this.urlCount++;
                             }
-                        }*/
+                        }
                     }
 
                     // Halt flow
@@ -514,6 +519,48 @@ namespace ClipboardUrlSaver
                 // Send to the system tray
                 this.SendToSystemTray();
             }
+        }
+
+        /// <summary>
+        /// Saves the URL html file.
+        /// </summary>
+        /// <param name="filePath">File path.</param>
+        private void SaveUrlHtmlFile(string filePath)
+        {
+            // TODO Check there's something to work with [Checks can be made before / improved]
+            if (this.urlCheckedListBox.Items.Count == 0)
+            {
+                // Halt flow
+                return;
+            }
+
+            /* Set html string */
+
+            // Top
+            string html =
+                $"<html>{Environment.NewLine}" +
+                $"\t<head>{Environment.NewLine}" +
+                $"\t\t<title>Clipboard URLs @ {DateTime.Now}</title>{Environment.NewLine}" +
+                $"\t<head>{Environment.NewLine}" +
+                $"\t<body>{Environment.NewLine}" +
+                $"\t\t<h1>Clipboard URLs @ {DateTime.Now}</h1>{Environment.NewLine}" +
+                $"\t\t<ul>{Environment.NewLine}";
+
+            // URLs
+            foreach (string url in this.urlCheckedListBox.Items)
+            {
+                // Append link
+                html += $"\t\t\t<li><a href=\"{url}\" target=\"_blank\">{url}</a></li>{Environment.NewLine}";
+            }
+
+            // Bottom
+            html +=
+                $"\t\t<ul>{Environment.NewLine}" +
+                $"\t</body>{Environment.NewLine}" +
+                $"</html>";
+
+            // Save to disk
+            File.WriteAllText(filePath, html);
         }
 
         /// <summary>
