@@ -317,7 +317,54 @@ namespace ClipboardUrlSaver
             // Save HTML file
             this.SaveUrlHtmlFile(this.saveFileTextBox.Text);
 
-            // TODO Open in default browser (http)
+            // Open HTML file in browser
+            Process.Start(this.GetBrowserPath(), (new Uri(Path.GetFullPath(this.saveFileTextBox.Text))).ToString());
+        }
+
+        /// <summary>
+        /// Gets the browser path.
+        /// </summary>
+        /// <returns>The browser path.</returns>
+        private string GetBrowserPath()
+        {
+            // Declare sub key path
+            string subKeyPath = string.Empty;
+
+            // Declare browser path
+            string browserPath = "iexplore.exe";
+
+            // Set sub key path
+            using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice", false))
+            {
+                // Check for user choice
+                if (registryKey != null)
+                {
+                    // Set sub key path by ProgID
+                    subKeyPath = registryKey.GetValue("ProgId").ToString() + @"\shell\open\command";
+                }
+                else
+                {
+                    // Set sub key path by http command
+                    subKeyPath = @"\http\shell\open\command";
+                }
+            }
+
+            // Set browser path
+            using (RegistryKey registryKey = Registry.ClassesRoot.OpenSubKey(subKeyPath, false))
+            {
+                // Set regex match
+                Match match = new Regex("(?<=\").*?(?=\")").Match(registryKey.GetValue(string.Empty).ToString());
+
+                // Check for success
+                if (match.Success)
+                {
+                    // Set browser path
+                    browserPath = match.Value;
+                }
+            }
+
+            // Return browser path
+            return browserPath;
         }
 
         /// <summary>
