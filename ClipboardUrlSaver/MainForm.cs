@@ -470,7 +470,7 @@ namespace ClipboardUrlSaver
             this.startInTrayToolStripMenuItem.Checked = !this.startInTrayToolStripMenuItem.Checked;
 
             // Save setting
-            this.settingsData.RunAtStartup = this.startInTrayToolStripMenuItem.Checked;
+            this.settingsData.StartInTray = this.startInTrayToolStripMenuItem.Checked;
         }
 
         /// <summary>
@@ -515,7 +515,7 @@ namespace ClipboardUrlSaver
             this.keepListBetweenRunsToolStripMenuItem.Checked = !this.keepListBetweenRunsToolStripMenuItem.Checked;
 
             // Save setting
-            this.settingsData.Prefix = this.keepListBetweenRunsToolStripMenuItem.Checked;
+            this.settingsData.KeepList = this.keepListBetweenRunsToolStripMenuItem.Checked;
         }
 
         /// <summary>
@@ -570,6 +570,9 @@ namespace ClipboardUrlSaver
         {
             // Remove clipboard listener
             RemoveClipboardFormatListener(this.Handle);
+
+            // Save settings data to disk
+            this.SaveSettingsData();
         }
 
         /// <summary>
