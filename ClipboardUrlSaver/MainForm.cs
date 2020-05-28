@@ -499,6 +499,9 @@ namespace ClipboardUrlSaver
         {
             // Toggle check state
             this.prefixWithhttpsToolStripMenuItem.Checked = !this.prefixWithhttpsToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.Prefix = this.prefixWithhttpsToolStripMenuItem.Checked;
         }
 
         /// <summary>
