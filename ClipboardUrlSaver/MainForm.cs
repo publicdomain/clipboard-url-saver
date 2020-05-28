@@ -11,6 +11,7 @@ namespace ClipboardUrlSaver
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
+    using System.Linq;
     using System.Reflection;
     using System.Runtime.InteropServices;
     using System.Text.RegularExpressions;
@@ -303,7 +304,20 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnOpenButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Check for items to work with
+            if (this.urlCheckedListBox.Items.Count == 0)
+            {
+                // Advise user
+                MessageBox.Show("No items to work with!", "Empty list", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                // Halt flow
+                return;
+            }
+
+            // Save HTML file
+            this.SaveUrlHtmlFile(this.saveFileTextBox.Text);
+
+            // TODO Open in default browser (http)
         }
 
         /// <summary>
