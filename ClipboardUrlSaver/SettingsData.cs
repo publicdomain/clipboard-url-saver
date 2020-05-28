@@ -37,7 +37,7 @@ namespace ClipboardUrlSaver
         /// Gets or sets a value indicating whether this <see cref="T:MultilingualWordCounter.SettingsData"/> runs at startup.
         /// </summary>
         /// <value><c>true</c> if run at startup; otherwise, <c>false</c>.</value>
-        public bool RunAtStartup { get; set; } = true;
+        public bool RunAtStartup { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> starts in tray.

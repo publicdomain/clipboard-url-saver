@@ -435,7 +435,7 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnAlwaysOnTopToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Toggle checked state
+            // Toggle check state
             this.alwaysOnTopToolStripMenuItem.Checked = !this.alwaysOnTopToolStripMenuItem.Checked;
 
             // Set topmost state
@@ -452,7 +452,11 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnRunAtStartupToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Toggle check state
+            this.runAtStartupToolStripMenuItem.Checked = !this.runAtStartupToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.RunAtStartup = this.runAtStartupToolStripMenuItem.Checked;
         }
 
         /// <summary>
