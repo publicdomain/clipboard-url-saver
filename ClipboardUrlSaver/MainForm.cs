@@ -466,7 +466,11 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnStartInTrayToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Toggle check state
+            this.startInTrayToolStripMenuItem.Checked = !this.startInTrayToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.RunAtStartup = this.startInTrayToolStripMenuItem.Checked;
         }
 
         /// <summary>
@@ -495,16 +499,6 @@ namespace ClipboardUrlSaver
         {
             // Toggle check state
             this.prefixWithhttpsToolStripMenuItem.Checked = !this.prefixWithhttpsToolStripMenuItem.Checked;
-        }
-
-        /// <summary>
-        /// Handles the window tool strip menu item drop down item clicked event.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnWindowToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            // TODO Add code
         }
 
         /// <summary>
