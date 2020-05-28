@@ -36,555 +36,556 @@ namespace ClipboardUrlSaver
         /// </summary>
         private void InitializeComponent()
         {
-        	this.components = new System.ComponentModel.Container();
-        	System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-        	this.notifyContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-        	this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.notifyExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-        	this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        	this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.mainNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-        	this.monitorGroupBox = new System.Windows.Forms.GroupBox();
-        	this.pauseResumeButton = new System.Windows.Forms.Button();
-        	this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-        	this.saveFileGroupBox = new System.Windows.Forms.GroupBox();
-        	this.saveFileTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-        	this.browseButton = new System.Windows.Forms.Button();
-        	this.openButton = new System.Windows.Forms.Button();
-        	this.saveFileTextBox = new System.Windows.Forms.TextBox();
-        	this.urlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-        	this.urlCheckedListBox = new System.Windows.Forms.CheckedListBox();
-        	this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-        	this.clearButton = new System.Windows.Forms.Button();
-        	this.deleteCheckedButton = new System.Windows.Forms.Button();
-        	this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.headquartersPatreoncomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-        	this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-        	this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-        	this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.runAtStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-        	this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.keepListBetweenRunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-        	this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
-        	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-        	this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-        	this.notifyContextMenuStrip.SuspendLayout();
-        	this.monitorGroupBox.SuspendLayout();
-        	this.mainTableLayoutPanel.SuspendLayout();
-        	this.saveFileGroupBox.SuspendLayout();
-        	this.saveFileTableLayoutPanel.SuspendLayout();
-        	this.urlTableLayoutPanel.SuspendLayout();
-        	this.tableLayoutPanel1.SuspendLayout();
-        	this.mainMenuStrip.SuspendLayout();
-        	this.mainStatusStrip.SuspendLayout();
-        	this.SuspendLayout();
-        	// 
-        	// notifyContextMenuStrip
-        	// 
-        	this.notifyContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.showToolStripMenuItem,
-        	        	        	this.notifyExitToolStripMenuItem});
-        	this.notifyContextMenuStrip.Name = "notifyContextMenuStrip";
-        	this.notifyContextMenuStrip.Size = new System.Drawing.Size(104, 48);
-        	// 
-        	// showToolStripMenuItem
-        	// 
-        	this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-        	this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-        	this.showToolStripMenuItem.Text = "&Show";
-        	this.showToolStripMenuItem.Click += new System.EventHandler(this.OnShowToolStripMenuItemClick);
-        	// 
-        	// notifyExitToolStripMenuItem
-        	// 
-        	this.notifyExitToolStripMenuItem.Name = "notifyExitToolStripMenuItem";
-        	this.notifyExitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-        	this.notifyExitToolStripMenuItem.Text = "&Exit";
-        	this.notifyExitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
-        	// 
-        	// minimizeToolStripMenuItem
-        	// 
-        	this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-        	this.minimizeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("minimizeToolStripMenuItem.Image")));
-        	this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-        	this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-        	this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.OnMinimizeToolStripMenuItemClick);
-        	// 
-        	// aboutToolStripMenuItem
-        	// 
-        	this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        	this.aboutToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
-        	this.aboutToolStripMenuItem.Text = "&About...";
-        	// 
-        	// toolStripSeparator1
-        	// 
-        	this.toolStripSeparator1.Name = "toolStripSeparator1";
-        	this.toolStripSeparator1.Size = new System.Drawing.Size(275, 6);
-        	// 
-        	// toolStripSeparator2
-        	// 
-        	this.toolStripSeparator2.Name = "toolStripSeparator2";
-        	this.toolStripSeparator2.Size = new System.Drawing.Size(275, 6);
-        	// 
-        	// originalThreadDonationCodercomToolStripMenuItem
-        	// 
-        	this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
-        	this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
-        	this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
-        	// 
-        	// mainNotifyIcon
-        	// 
-        	this.mainNotifyIcon.ContextMenuStrip = this.notifyContextMenuStrip;
-        	this.mainNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("mainNotifyIcon.Icon")));
-        	this.mainNotifyIcon.Text = "Click to show";
-        	this.mainNotifyIcon.Visible = true;
-        	this.mainNotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnMainNotifyIconMouseClick);
-        	// 
-        	// monitorGroupBox
-        	// 
-        	this.monitorGroupBox.Controls.Add(this.pauseResumeButton);
-        	this.monitorGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.monitorGroupBox.Location = new System.Drawing.Point(3, 3);
-        	this.monitorGroupBox.Name = "monitorGroupBox";
-        	this.monitorGroupBox.Size = new System.Drawing.Size(322, 69);
-        	this.monitorGroupBox.TabIndex = 6;
-        	this.monitorGroupBox.TabStop = false;
-        	this.monitorGroupBox.Text = "Monitor is: ACTIVE";
-        	// 
-        	// pauseResumeButton
-        	// 
-        	this.pauseResumeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.pauseResumeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.pauseResumeButton.Location = new System.Drawing.Point(3, 16);
-        	this.pauseResumeButton.Name = "pauseResumeButton";
-        	this.pauseResumeButton.Size = new System.Drawing.Size(316, 50);
-        	this.pauseResumeButton.TabIndex = 0;
-        	this.pauseResumeButton.Text = "&Pause";
-        	this.pauseResumeButton.UseVisualStyleBackColor = true;
-        	this.pauseResumeButton.Click += new System.EventHandler(this.OnPauseResumeButtonClick);
-        	// 
-        	// mainTableLayoutPanel
-        	// 
-        	this.mainTableLayoutPanel.ColumnCount = 1;
-        	this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.mainTableLayoutPanel.Controls.Add(this.saveFileGroupBox, 0, 2);
-        	this.mainTableLayoutPanel.Controls.Add(this.monitorGroupBox, 0, 0);
-        	this.mainTableLayoutPanel.Controls.Add(this.urlTableLayoutPanel, 0, 1);
-        	this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 24);
-        	this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
-        	this.mainTableLayoutPanel.RowCount = 3;
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-        	this.mainTableLayoutPanel.Size = new System.Drawing.Size(328, 394);
-        	this.mainTableLayoutPanel.TabIndex = 12;
-        	// 
-        	// saveFileGroupBox
-        	// 
-        	this.saveFileGroupBox.Controls.Add(this.saveFileTableLayoutPanel);
-        	this.saveFileGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.saveFileGroupBox.Location = new System.Drawing.Point(3, 297);
-        	this.saveFileGroupBox.Name = "saveFileGroupBox";
-        	this.saveFileGroupBox.Size = new System.Drawing.Size(322, 94);
-        	this.saveFileGroupBox.TabIndex = 7;
-        	this.saveFileGroupBox.TabStop = false;
-        	this.saveFileGroupBox.Text = "Save file:";
-        	// 
-        	// saveFileTableLayoutPanel
-        	// 
-        	this.saveFileTableLayoutPanel.ColumnCount = 2;
-        	this.saveFileTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.27273F));
-        	this.saveFileTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
-        	this.saveFileTableLayoutPanel.Controls.Add(this.browseButton, 0, 0);
-        	this.saveFileTableLayoutPanel.Controls.Add(this.openButton, 1, 0);
-        	this.saveFileTableLayoutPanel.Controls.Add(this.saveFileTextBox, 0, 0);
-        	this.saveFileTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.saveFileTableLayoutPanel.Location = new System.Drawing.Point(3, 16);
-        	this.saveFileTableLayoutPanel.Name = "saveFileTableLayoutPanel";
-        	this.saveFileTableLayoutPanel.RowCount = 2;
-        	this.saveFileTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-        	this.saveFileTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.saveFileTableLayoutPanel.Size = new System.Drawing.Size(316, 75);
-        	this.saveFileTableLayoutPanel.TabIndex = 0;
-        	// 
-        	// browseButton
-        	// 
-        	this.browseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.browseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.browseButton.Location = new System.Drawing.Point(247, 0);
-        	this.browseButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-        	this.browseButton.Name = "browseButton";
-        	this.browseButton.Size = new System.Drawing.Size(66, 30);
-        	this.browseButton.TabIndex = 3;
-        	this.browseButton.Text = "&Browse";
-        	this.browseButton.UseVisualStyleBackColor = true;
-        	this.browseButton.Click += new System.EventHandler(this.OnBrowseButtonClick);
-        	// 
-        	// openButton
-        	// 
-        	this.saveFileTableLayoutPanel.SetColumnSpan(this.openButton, 2);
-        	this.openButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.openButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.openButton.ForeColor = System.Drawing.Color.Red;
-        	this.openButton.Location = new System.Drawing.Point(3, 33);
-        	this.openButton.Name = "openButton";
-        	this.openButton.Size = new System.Drawing.Size(310, 39);
-        	this.openButton.TabIndex = 2;
-        	this.openButton.Text = "&Open list in browser";
-        	this.openButton.UseVisualStyleBackColor = true;
-        	this.openButton.Click += new System.EventHandler(this.OnOpenButtonClick);
-        	// 
-        	// saveFileTextBox
-        	// 
-        	this.saveFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-        	this.saveFileTextBox.Location = new System.Drawing.Point(3, 5);
-        	this.saveFileTextBox.Name = "saveFileTextBox";
-        	this.saveFileTextBox.Size = new System.Drawing.Size(238, 20);
-        	this.saveFileTextBox.TabIndex = 1;
-        	this.saveFileTextBox.Text = "toRead.html";
-        	// 
-        	// urlTableLayoutPanel
-        	// 
-        	this.urlTableLayoutPanel.ColumnCount = 1;
-        	this.urlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.urlTableLayoutPanel.Controls.Add(this.urlCheckedListBox, 0, 0);
-        	this.urlTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 1);
-        	this.urlTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.urlTableLayoutPanel.Location = new System.Drawing.Point(6, 75);
-        	this.urlTableLayoutPanel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 3);
-        	this.urlTableLayoutPanel.Name = "urlTableLayoutPanel";
-        	this.urlTableLayoutPanel.RowCount = 2;
-        	this.urlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.urlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-        	this.urlTableLayoutPanel.Size = new System.Drawing.Size(316, 216);
-        	this.urlTableLayoutPanel.TabIndex = 8;
-        	// 
-        	// urlCheckedListBox
-        	// 
-        	this.urlCheckedListBox.CheckOnClick = true;
-        	this.urlCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.urlCheckedListBox.FormattingEnabled = true;
-        	this.urlCheckedListBox.HorizontalScrollbar = true;
-        	this.urlCheckedListBox.IntegralHeight = false;
-        	this.urlCheckedListBox.Location = new System.Drawing.Point(3, 3);
-        	this.urlCheckedListBox.Name = "urlCheckedListBox";
-        	this.urlCheckedListBox.Size = new System.Drawing.Size(310, 175);
-        	this.urlCheckedListBox.TabIndex = 0;
-        	// 
-        	// tableLayoutPanel1
-        	// 
-        	this.tableLayoutPanel1.ColumnCount = 2;
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.32932F));
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.67068F));
-        	this.tableLayoutPanel1.Controls.Add(this.clearButton, 1, 0);
-        	this.tableLayoutPanel1.Controls.Add(this.deleteCheckedButton, 0, 0);
-        	this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 184);
-        	this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-        	this.tableLayoutPanel1.RowCount = 1;
-        	this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.tableLayoutPanel1.Size = new System.Drawing.Size(310, 29);
-        	this.tableLayoutPanel1.TabIndex = 1;
-        	// 
-        	// clearButton
-        	// 
-        	this.clearButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.clearButton.Location = new System.Drawing.Point(239, 0);
-        	this.clearButton.Margin = new System.Windows.Forms.Padding(0);
-        	this.clearButton.Name = "clearButton";
-        	this.clearButton.Size = new System.Drawing.Size(71, 29);
-        	this.clearButton.TabIndex = 0;
-        	this.clearButton.Text = "&Clear";
-        	this.clearButton.UseVisualStyleBackColor = true;
-        	this.clearButton.Click += new System.EventHandler(this.OnClearButtonClick);
-        	// 
-        	// deleteCheckedButton
-        	// 
-        	this.deleteCheckedButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.deleteCheckedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.deleteCheckedButton.Location = new System.Drawing.Point(0, 0);
-        	this.deleteCheckedButton.Margin = new System.Windows.Forms.Padding(0);
-        	this.deleteCheckedButton.Name = "deleteCheckedButton";
-        	this.deleteCheckedButton.Size = new System.Drawing.Size(239, 29);
-        	this.deleteCheckedButton.TabIndex = 1;
-        	this.deleteCheckedButton.Text = "&Delete checked";
-        	this.deleteCheckedButton.UseVisualStyleBackColor = true;
-        	this.deleteCheckedButton.Click += new System.EventHandler(this.OnDeleteCheckedButtonClick);
-        	// 
-        	// sourceCodeGithubcomToolStripMenuItem
-        	// 
-        	this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
-        	this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
-        	this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
-        	this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
-        	this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
-        	// 
-        	// headquartersPatreoncomToolStripMenuItem
-        	// 
-        	this.headquartersPatreoncomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("headquartersPatreoncomToolStripMenuItem.Image")));
-        	this.headquartersPatreoncomToolStripMenuItem.Name = "headquartersPatreoncomToolStripMenuItem";
-        	this.headquartersPatreoncomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
-        	this.headquartersPatreoncomToolStripMenuItem.Text = "Headquarters @ Patreon.com";
-        	this.headquartersPatreoncomToolStripMenuItem.Click += new System.EventHandler(this.OnHeadquartersPatreoncomToolStripMenuItemClick);
-        	// 
-        	// helpToolStripMenuItem
-        	// 
-        	this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.headquartersPatreoncomToolStripMenuItem,
-        	        	        	this.sourceCodeGithubcomToolStripMenuItem,
-        	        	        	this.toolStripSeparator1,
-        	        	        	this.originalThreadDonationCodercomToolStripMenuItem,
-        	        	        	this.toolStripSeparator2,
-        	        	        	this.aboutToolStripMenuItem});
-        	this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-        	this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-        	this.helpToolStripMenuItem.Text = "&Help";
-        	// 
-        	// mainMenuStrip
-        	// 
-        	this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.fileToolStripMenuItem,
-        	        	        	this.optionsToolStripMenuItem,
-        	        	        	this.helpToolStripMenuItem,
-        	        	        	this.minimizeToolStripMenuItem});
-        	this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
-        	this.mainMenuStrip.Name = "mainMenuStrip";
-        	this.mainMenuStrip.Size = new System.Drawing.Size(328, 24);
-        	this.mainMenuStrip.TabIndex = 11;
-        	// 
-        	// fileToolStripMenuItem
-        	// 
-        	this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.newToolStripMenuItem,
-        	        	        	this.openToolStripMenuItem,
-        	        	        	this.toolStripSeparator,
-        	        	        	this.saveToolStripMenuItem,
-        	        	        	this.toolStripSeparator4,
-        	        	        	this.exitToolStripMenuItem});
-        	this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-        	this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-        	this.fileToolStripMenuItem.Text = "&File";
-        	// 
-        	// newToolStripMenuItem
-        	// 
-        	this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-        	this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-        	this.newToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-        	this.newToolStripMenuItem.Text = "&New";
-        	this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
-        	// 
-        	// openToolStripMenuItem
-        	// 
-        	this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-        	this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-        	this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-        	this.openToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-        	this.openToolStripMenuItem.Text = "&Open";
-        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator
-        	// 
-        	this.toolStripSeparator.Name = "toolStripSeparator";
-        	this.toolStripSeparator.Size = new System.Drawing.Size(158, 6);
-        	// 
-        	// saveToolStripMenuItem
-        	// 
-        	this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.textToolStripMenuItem,
-        	        	        	this.hTMLToolStripMenuItem});
-        	this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-        	this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-        	this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-        	this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-        	this.saveToolStripMenuItem.Text = "&Save as...";
-        	this.saveToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSaveToolStripMenuItemDropDownItemClicked);
-        	// 
-        	// textToolStripMenuItem
-        	// 
-        	this.textToolStripMenuItem.Name = "textToolStripMenuItem";
-        	this.textToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-        	this.textToolStripMenuItem.Text = "&Text";
-        	this.textToolStripMenuItem.Click += new System.EventHandler(this.OnTextToolStripMenuItemClick);
-        	// 
-        	// hTMLToolStripMenuItem
-        	// 
-        	this.hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
-        	this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-        	this.hTMLToolStripMenuItem.Text = "&HTML";
-        	this.hTMLToolStripMenuItem.Click += new System.EventHandler(this.OnHTMLToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator4
-        	// 
-        	this.toolStripSeparator4.Name = "toolStripSeparator4";
-        	this.toolStripSeparator4.Size = new System.Drawing.Size(158, 6);
-        	// 
-        	// exitToolStripMenuItem
-        	// 
-        	this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-        	this.exitToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-        	this.exitToolStripMenuItem.Text = "E&xit";
-        	this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
-        	// 
-        	// optionsToolStripMenuItem
-        	// 
-        	this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.alwaysOnTopToolStripMenuItem,
-        	        	        	this.hideCloseButtonToolStripMenuItem,
-        	        	        	this.runAtStartupToolStripMenuItem,
-        	        	        	this.startInTrayToolStripMenuItem,
-        	        	        	this.toolStripSeparator3,
-        	        	        	this.prefixWithhttpsToolStripMenuItem,
-        	        	        	this.keepListBetweenRunsToolStripMenuItem});
-        	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-        	this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-        	this.optionsToolStripMenuItem.Text = "&Options";
-        	// 
-        	// alwaysOnTopToolStripMenuItem
-        	// 
-        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
-        	this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
-        	// 
-        	// hideCloseButtonToolStripMenuItem
-        	// 
-        	this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
-        	this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
-        	this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
-        	// 
-        	// runAtStartupToolStripMenuItem
-        	// 
-        	this.runAtStartupToolStripMenuItem.Name = "runAtStartupToolStripMenuItem";
-        	this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.runAtStartupToolStripMenuItem.Text = "&Run at startup";
-        	this.runAtStartupToolStripMenuItem.Click += new System.EventHandler(this.OnRunAtStartupToolStripMenuItemClick);
-        	// 
-        	// startInTrayToolStripMenuItem
-        	// 
-        	this.startInTrayToolStripMenuItem.Name = "startInTrayToolStripMenuItem";
-        	this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.startInTrayToolStripMenuItem.Text = "&Start in tray";
-        	this.startInTrayToolStripMenuItem.Click += new System.EventHandler(this.OnStartInTrayToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator3
-        	// 
-        	this.toolStripSeparator3.Name = "toolStripSeparator3";
-        	this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
-        	// 
-        	// prefixWithhttpsToolStripMenuItem
-        	// 
-        	this.prefixWithhttpsToolStripMenuItem.Checked = true;
-        	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-        	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
-        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
-        	this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
-        	// 
-        	// keepListBetweenRunsToolStripMenuItem
-        	// 
-        	this.keepListBetweenRunsToolStripMenuItem.Checked = true;
-        	this.keepListBetweenRunsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-        	this.keepListBetweenRunsToolStripMenuItem.Name = "keepListBetweenRunsToolStripMenuItem";
-        	this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.keepListBetweenRunsToolStripMenuItem.Text = "&Keep list between runs";
-        	// 
-        	// mainToolStripStatusLabel
-        	// 
-        	this.mainToolStripStatusLabel.Name = "mainToolStripStatusLabel";
-        	this.mainToolStripStatusLabel.Size = new System.Drawing.Size(150, 17);
-        	this.mainToolStripStatusLabel.Text = "URLs saved during this run:";
-        	// 
-        	// countToolStripStatusLabel
-        	// 
-        	this.countToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.countToolStripStatusLabel.Name = "countToolStripStatusLabel";
-        	this.countToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
-        	this.countToolStripStatusLabel.Text = "0";
-        	// 
-        	// mainStatusStrip
-        	// 
-        	this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.mainToolStripStatusLabel,
-        	        	        	this.countToolStripStatusLabel});
-        	this.mainStatusStrip.Location = new System.Drawing.Point(0, 418);
-        	this.mainStatusStrip.Name = "mainStatusStrip";
-        	this.mainStatusStrip.Size = new System.Drawing.Size(328, 22);
-        	this.mainStatusStrip.SizingGrip = false;
-        	this.mainStatusStrip.TabIndex = 10;
-        	// 
-        	// saveTextFileDialog
-        	// 
-        	this.saveTextFileDialog.DefaultExt = "txt";
-        	this.saveTextFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-        	this.saveTextFileDialog.Title = "Save text file";
-        	// 
-        	// openFileDialog
-        	// 
-        	this.openFileDialog.DefaultExt = "txt";
-        	this.openFileDialog.Filter = "Text Files (*.txt)|*.txt|HTML Files|*.htm;*.html|All files (*.*)|*.*";
-        	this.openFileDialog.Title = "Open file with URLs";
-        	// 
-        	// saveHtmlFileDialog
-        	// 
-        	this.saveHtmlFileDialog.DefaultExt = "html";
-        	this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
-        	this.saveHtmlFileDialog.Title = "Save HTML file";
-        	// 
-        	// MainForm
-        	// 
-        	this.AcceptButton = this.pauseResumeButton;
-        	this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        	this.ClientSize = new System.Drawing.Size(328, 440);
-        	this.Controls.Add(this.mainTableLayoutPanel);
-        	this.Controls.Add(this.mainStatusStrip);
-        	this.Controls.Add(this.mainMenuStrip);
-        	this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-        	this.Name = "MainForm";
-        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "Clipboard URL Saver";
-        	this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
-        	this.Shown += new System.EventHandler(this.OnMainFormShown);
-        	this.Resize += new System.EventHandler(this.OnMainFormResize);
-        	this.notifyContextMenuStrip.ResumeLayout(false);
-        	this.monitorGroupBox.ResumeLayout(false);
-        	this.mainTableLayoutPanel.ResumeLayout(false);
-        	this.saveFileGroupBox.ResumeLayout(false);
-        	this.saveFileTableLayoutPanel.ResumeLayout(false);
-        	this.saveFileTableLayoutPanel.PerformLayout();
-        	this.urlTableLayoutPanel.ResumeLayout(false);
-        	this.tableLayoutPanel1.ResumeLayout(false);
-        	this.mainMenuStrip.ResumeLayout(false);
-        	this.mainMenuStrip.PerformLayout();
-        	this.mainStatusStrip.ResumeLayout(false);
-        	this.mainStatusStrip.PerformLayout();
-        	this.ResumeLayout(false);
-        	this.PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.notifyContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.monitorGroupBox = new System.Windows.Forms.GroupBox();
+            this.pauseResumeButton = new System.Windows.Forms.Button();
+            this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.saveFileGroupBox = new System.Windows.Forms.GroupBox();
+            this.saveFileTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.browseButton = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
+            this.saveFileTextBox = new System.Windows.Forms.TextBox();
+            this.urlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.urlCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.deleteCheckedButton = new System.Windows.Forms.Button();
+            this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.headquartersPatreoncomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runAtStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keepListBetweenRunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.countToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.notifyContextMenuStrip.SuspendLayout();
+            this.monitorGroupBox.SuspendLayout();
+            this.mainTableLayoutPanel.SuspendLayout();
+            this.saveFileGroupBox.SuspendLayout();
+            this.saveFileTableLayoutPanel.SuspendLayout();
+            this.urlTableLayoutPanel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.mainMenuStrip.SuspendLayout();
+            this.mainStatusStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // notifyContextMenuStrip
+            // 
+            this.notifyContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.showToolStripMenuItem,
+                                    this.notifyExitToolStripMenuItem});
+            this.notifyContextMenuStrip.Name = "notifyContextMenuStrip";
+            this.notifyContextMenuStrip.Size = new System.Drawing.Size(104, 48);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Text = "&Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.OnShowToolStripMenuItemClick);
+            // 
+            // notifyExitToolStripMenuItem
+            // 
+            this.notifyExitToolStripMenuItem.Name = "notifyExitToolStripMenuItem";
+            this.notifyExitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.notifyExitToolStripMenuItem.Text = "&Exit";
+            this.notifyExitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.minimizeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("minimizeToolStripMenuItem.Image")));
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.OnMinimizeToolStripMenuItemClick);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(275, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(275, 6);
+            // 
+            // originalThreadDonationCodercomToolStripMenuItem
+            // 
+            this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
+            this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
+            this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
+            // 
+            // mainNotifyIcon
+            // 
+            this.mainNotifyIcon.ContextMenuStrip = this.notifyContextMenuStrip;
+            this.mainNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("mainNotifyIcon.Icon")));
+            this.mainNotifyIcon.Text = "Click to show";
+            this.mainNotifyIcon.Visible = true;
+            this.mainNotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnMainNotifyIconMouseClick);
+            // 
+            // monitorGroupBox
+            // 
+            this.monitorGroupBox.Controls.Add(this.pauseResumeButton);
+            this.monitorGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monitorGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.monitorGroupBox.Name = "monitorGroupBox";
+            this.monitorGroupBox.Size = new System.Drawing.Size(322, 69);
+            this.monitorGroupBox.TabIndex = 6;
+            this.monitorGroupBox.TabStop = false;
+            this.monitorGroupBox.Text = "Monitor is: ACTIVE";
+            // 
+            // pauseResumeButton
+            // 
+            this.pauseResumeButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pauseResumeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseResumeButton.Location = new System.Drawing.Point(3, 16);
+            this.pauseResumeButton.Name = "pauseResumeButton";
+            this.pauseResumeButton.Size = new System.Drawing.Size(316, 50);
+            this.pauseResumeButton.TabIndex = 0;
+            this.pauseResumeButton.Text = "&Pause";
+            this.pauseResumeButton.UseVisualStyleBackColor = true;
+            this.pauseResumeButton.Click += new System.EventHandler(this.OnPauseResumeButtonClick);
+            // 
+            // mainTableLayoutPanel
+            // 
+            this.mainTableLayoutPanel.ColumnCount = 1;
+            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainTableLayoutPanel.Controls.Add(this.saveFileGroupBox, 0, 2);
+            this.mainTableLayoutPanel.Controls.Add(this.monitorGroupBox, 0, 0);
+            this.mainTableLayoutPanel.Controls.Add(this.urlTableLayoutPanel, 0, 1);
+            this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
+            this.mainTableLayoutPanel.RowCount = 3;
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.mainTableLayoutPanel.Size = new System.Drawing.Size(328, 394);
+            this.mainTableLayoutPanel.TabIndex = 12;
+            // 
+            // saveFileGroupBox
+            // 
+            this.saveFileGroupBox.Controls.Add(this.saveFileTableLayoutPanel);
+            this.saveFileGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saveFileGroupBox.Location = new System.Drawing.Point(3, 297);
+            this.saveFileGroupBox.Name = "saveFileGroupBox";
+            this.saveFileGroupBox.Size = new System.Drawing.Size(322, 94);
+            this.saveFileGroupBox.TabIndex = 7;
+            this.saveFileGroupBox.TabStop = false;
+            this.saveFileGroupBox.Text = "Save file:";
+            // 
+            // saveFileTableLayoutPanel
+            // 
+            this.saveFileTableLayoutPanel.ColumnCount = 2;
+            this.saveFileTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.27273F));
+            this.saveFileTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
+            this.saveFileTableLayoutPanel.Controls.Add(this.browseButton, 0, 0);
+            this.saveFileTableLayoutPanel.Controls.Add(this.openButton, 1, 0);
+            this.saveFileTableLayoutPanel.Controls.Add(this.saveFileTextBox, 0, 0);
+            this.saveFileTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saveFileTableLayoutPanel.Location = new System.Drawing.Point(3, 16);
+            this.saveFileTableLayoutPanel.Name = "saveFileTableLayoutPanel";
+            this.saveFileTableLayoutPanel.RowCount = 2;
+            this.saveFileTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.saveFileTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.saveFileTableLayoutPanel.Size = new System.Drawing.Size(316, 75);
+            this.saveFileTableLayoutPanel.TabIndex = 0;
+            // 
+            // browseButton
+            // 
+            this.browseButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.browseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseButton.Location = new System.Drawing.Point(247, 0);
+            this.browseButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.browseButton.Name = "browseButton";
+            this.browseButton.Size = new System.Drawing.Size(66, 30);
+            this.browseButton.TabIndex = 3;
+            this.browseButton.Text = "&Browse";
+            this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.OnBrowseButtonClick);
+            // 
+            // openButton
+            // 
+            this.saveFileTableLayoutPanel.SetColumnSpan(this.openButton, 2);
+            this.openButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.openButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openButton.ForeColor = System.Drawing.Color.Red;
+            this.openButton.Location = new System.Drawing.Point(3, 33);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(310, 39);
+            this.openButton.TabIndex = 2;
+            this.openButton.Text = "&Open list in browser";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.OnOpenButtonClick);
+            // 
+            // saveFileTextBox
+            // 
+            this.saveFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveFileTextBox.Location = new System.Drawing.Point(3, 5);
+            this.saveFileTextBox.Name = "saveFileTextBox";
+            this.saveFileTextBox.Size = new System.Drawing.Size(238, 20);
+            this.saveFileTextBox.TabIndex = 1;
+            this.saveFileTextBox.Text = "toRead.html";
+            // 
+            // urlTableLayoutPanel
+            // 
+            this.urlTableLayoutPanel.ColumnCount = 1;
+            this.urlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.urlTableLayoutPanel.Controls.Add(this.urlCheckedListBox, 0, 0);
+            this.urlTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.urlTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.urlTableLayoutPanel.Location = new System.Drawing.Point(6, 75);
+            this.urlTableLayoutPanel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 3);
+            this.urlTableLayoutPanel.Name = "urlTableLayoutPanel";
+            this.urlTableLayoutPanel.RowCount = 2;
+            this.urlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.urlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.urlTableLayoutPanel.Size = new System.Drawing.Size(316, 216);
+            this.urlTableLayoutPanel.TabIndex = 8;
+            // 
+            // urlCheckedListBox
+            // 
+            this.urlCheckedListBox.CheckOnClick = true;
+            this.urlCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.urlCheckedListBox.FormattingEnabled = true;
+            this.urlCheckedListBox.HorizontalScrollbar = true;
+            this.urlCheckedListBox.IntegralHeight = false;
+            this.urlCheckedListBox.Location = new System.Drawing.Point(3, 3);
+            this.urlCheckedListBox.Name = "urlCheckedListBox";
+            this.urlCheckedListBox.Size = new System.Drawing.Size(310, 175);
+            this.urlCheckedListBox.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.32932F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.67068F));
+            this.tableLayoutPanel1.Controls.Add(this.clearButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.deleteCheckedButton, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 184);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(310, 29);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearButton.Location = new System.Drawing.Point(239, 0);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(0);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(71, 29);
+            this.clearButton.TabIndex = 0;
+            this.clearButton.Text = "&Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.OnClearButtonClick);
+            // 
+            // deleteCheckedButton
+            // 
+            this.deleteCheckedButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteCheckedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteCheckedButton.Location = new System.Drawing.Point(0, 0);
+            this.deleteCheckedButton.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteCheckedButton.Name = "deleteCheckedButton";
+            this.deleteCheckedButton.Size = new System.Drawing.Size(239, 29);
+            this.deleteCheckedButton.TabIndex = 1;
+            this.deleteCheckedButton.Text = "&Delete checked";
+            this.deleteCheckedButton.UseVisualStyleBackColor = true;
+            this.deleteCheckedButton.Click += new System.EventHandler(this.OnDeleteCheckedButtonClick);
+            // 
+            // sourceCodeGithubcomToolStripMenuItem
+            // 
+            this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
+            this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
+            this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
+            this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
+            // 
+            // headquartersPatreoncomToolStripMenuItem
+            // 
+            this.headquartersPatreoncomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("headquartersPatreoncomToolStripMenuItem.Image")));
+            this.headquartersPatreoncomToolStripMenuItem.Name = "headquartersPatreoncomToolStripMenuItem";
+            this.headquartersPatreoncomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.headquartersPatreoncomToolStripMenuItem.Text = "Headquarters @ Patreon.com";
+            this.headquartersPatreoncomToolStripMenuItem.Click += new System.EventHandler(this.OnHeadquartersPatreoncomToolStripMenuItemClick);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.headquartersPatreoncomToolStripMenuItem,
+                                    this.sourceCodeGithubcomToolStripMenuItem,
+                                    this.toolStripSeparator1,
+                                    this.originalThreadDonationCodercomToolStripMenuItem,
+                                    this.toolStripSeparator2,
+                                    this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // mainMenuStrip
+            // 
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.fileToolStripMenuItem,
+                                    this.optionsToolStripMenuItem,
+                                    this.helpToolStripMenuItem,
+                                    this.minimizeToolStripMenuItem});
+            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.Name = "mainMenuStrip";
+            this.mainMenuStrip.Size = new System.Drawing.Size(328, 24);
+            this.mainMenuStrip.TabIndex = 11;
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.newToolStripMenuItem,
+                                    this.openToolStripMenuItem,
+                                    this.toolStripSeparator,
+                                    this.saveToolStripMenuItem,
+                                    this.toolStripSeparator4,
+                                    this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(158, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.textToolStripMenuItem,
+                                    this.hTMLToolStripMenuItem});
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.saveToolStripMenuItem.Text = "&Save as...";
+            this.saveToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnSaveToolStripMenuItemDropDownItemClicked);
+            // 
+            // textToolStripMenuItem
+            // 
+            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            this.textToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.textToolStripMenuItem.Text = "&Text";
+            this.textToolStripMenuItem.Click += new System.EventHandler(this.OnTextToolStripMenuItemClick);
+            // 
+            // hTMLToolStripMenuItem
+            // 
+            this.hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
+            this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.hTMLToolStripMenuItem.Text = "&HTML";
+            this.hTMLToolStripMenuItem.Click += new System.EventHandler(this.OnHTMLToolStripMenuItemClick);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(158, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.alwaysOnTopToolStripMenuItem,
+                                    this.hideCloseButtonToolStripMenuItem,
+                                    this.runAtStartupToolStripMenuItem,
+                                    this.startInTrayToolStripMenuItem,
+                                    this.toolStripSeparator3,
+                                    this.prefixWithhttpsToolStripMenuItem,
+                                    this.keepListBetweenRunsToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
+            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
+            // 
+            // hideCloseButtonToolStripMenuItem
+            // 
+            this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
+            this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
+            this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
+            // 
+            // runAtStartupToolStripMenuItem
+            // 
+            this.runAtStartupToolStripMenuItem.Name = "runAtStartupToolStripMenuItem";
+            this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.runAtStartupToolStripMenuItem.Text = "&Run at startup";
+            this.runAtStartupToolStripMenuItem.Click += new System.EventHandler(this.OnRunAtStartupToolStripMenuItemClick);
+            // 
+            // startInTrayToolStripMenuItem
+            // 
+            this.startInTrayToolStripMenuItem.Name = "startInTrayToolStripMenuItem";
+            this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.startInTrayToolStripMenuItem.Text = "&Start in tray";
+            this.startInTrayToolStripMenuItem.Click += new System.EventHandler(this.OnStartInTrayToolStripMenuItemClick);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
+            // 
+            // prefixWithhttpsToolStripMenuItem
+            // 
+            this.prefixWithhttpsToolStripMenuItem.Checked = true;
+            this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
+            this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
+            this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
+            // 
+            // keepListBetweenRunsToolStripMenuItem
+            // 
+            this.keepListBetweenRunsToolStripMenuItem.Checked = true;
+            this.keepListBetweenRunsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.keepListBetweenRunsToolStripMenuItem.Name = "keepListBetweenRunsToolStripMenuItem";
+            this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.keepListBetweenRunsToolStripMenuItem.Text = "&Keep list between runs";
+            this.keepListBetweenRunsToolStripMenuItem.Click += new System.EventHandler(this.OnKeepListBetweenRunsToolStripMenuItemClick);
+            // 
+            // mainToolStripStatusLabel
+            // 
+            this.mainToolStripStatusLabel.Name = "mainToolStripStatusLabel";
+            this.mainToolStripStatusLabel.Size = new System.Drawing.Size(150, 17);
+            this.mainToolStripStatusLabel.Text = "URLs saved during this run:";
+            // 
+            // countToolStripStatusLabel
+            // 
+            this.countToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countToolStripStatusLabel.Name = "countToolStripStatusLabel";
+            this.countToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
+            this.countToolStripStatusLabel.Text = "0";
+            // 
+            // mainStatusStrip
+            // 
+            this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.mainToolStripStatusLabel,
+                                    this.countToolStripStatusLabel});
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 418);
+            this.mainStatusStrip.Name = "mainStatusStrip";
+            this.mainStatusStrip.Size = new System.Drawing.Size(328, 22);
+            this.mainStatusStrip.SizingGrip = false;
+            this.mainStatusStrip.TabIndex = 10;
+            // 
+            // saveTextFileDialog
+            // 
+            this.saveTextFileDialog.DefaultExt = "txt";
+            this.saveTextFileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.saveTextFileDialog.Title = "Save text file";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "txt";
+            this.openFileDialog.Filter = "Text Files (*.txt)|*.txt|HTML Files|*.htm;*.html|All files (*.*)|*.*";
+            this.openFileDialog.Title = "Open file with URLs";
+            // 
+            // saveHtmlFileDialog
+            // 
+            this.saveHtmlFileDialog.DefaultExt = "html";
+            this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
+            this.saveHtmlFileDialog.Title = "Save HTML file";
+            // 
+            // MainForm
+            // 
+            this.AcceptButton = this.pauseResumeButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(328, 440);
+            this.Controls.Add(this.mainTableLayoutPanel);
+            this.Controls.Add(this.mainStatusStrip);
+            this.Controls.Add(this.mainMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Clipboard URL Saver";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
+            this.Shown += new System.EventHandler(this.OnMainFormShown);
+            this.Resize += new System.EventHandler(this.OnMainFormResize);
+            this.notifyContextMenuStrip.ResumeLayout(false);
+            this.monitorGroupBox.ResumeLayout(false);
+            this.mainTableLayoutPanel.ResumeLayout(false);
+            this.saveFileGroupBox.ResumeLayout(false);
+            this.saveFileTableLayoutPanel.ResumeLayout(false);
+            this.saveFileTableLayoutPanel.PerformLayout();
+            this.urlTableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
+            this.mainStatusStrip.ResumeLayout(false);
+            this.mainStatusStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
         private System.Windows.Forms.ToolStripMenuItem keepListBetweenRunsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;

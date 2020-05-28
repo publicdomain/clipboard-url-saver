@@ -491,7 +491,7 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Handles the prefix https tool strip menu item click.
+        /// Handles the prefix https tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -502,6 +502,20 @@ namespace ClipboardUrlSaver
 
             // Save setting
             this.settingsData.Prefix = this.prefixWithhttpsToolStripMenuItem.Checked;
+        }
+
+        /// <summary>
+        /// Handles the keep list between runs tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        private void OnKeepListBetweenRunsToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Toggle check state
+            this.keepListBetweenRunsToolStripMenuItem.Checked = !this.keepListBetweenRunsToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.Prefix = this.keepListBetweenRunsToolStripMenuItem.Checked;
         }
 
         /// <summary>
