@@ -574,6 +574,33 @@ namespace ClipboardUrlSaver
 
             // Save settings data to disk
             this.SaveSettingsData();
+
+            try
+            {
+                // Open registry key
+                using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+                {
+                    // Check if must write to registry
+                    if (this.settingsData.RunAtStartup)
+                    {
+                        // Add program value
+                        registryKey.SetValue("ClipboardUrlSaver", $"\"{Application.ExecutablePath}\" /autostart");
+                    }
+                    else
+                    {
+                        // Erase program value
+                        registryKey.DeleteValue("ClipboardUrlSaver", false);
+                    }
+                }
+            }
+            catch
+            {
+                // Inform user
+                MessageBox.Show("Error when interacting with the Windows registry.", "Registry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Halt flow
+                return;
+            }
         }
 
         /// <summary>
