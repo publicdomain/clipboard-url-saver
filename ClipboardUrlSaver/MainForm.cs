@@ -442,7 +442,7 @@ namespace ClipboardUrlSaver
             this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
 
             // Save setting
-            this.settingsData.AlwaysOnTop = this.TopMost;
+            this.settingsData.AlwaysOnTop = this.alwaysOnTopToolStripMenuItem.Checked;
         }
 
         /// <summary>
