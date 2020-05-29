@@ -308,7 +308,7 @@ namespace ClipboardUrlSaver
             if (this.urlCheckedListBox.Items.Count == 0)
             {
                 // Advise user
-                MessageBox.Show("No items to work with!", "Empty list", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("No items to work with!", "Empty list", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 // Halt flow
                 return;
@@ -685,7 +685,8 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnShowToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Restore window 
+            this.RestoreFromSystemTray();
         }
 
         /// <summary>
