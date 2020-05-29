@@ -129,17 +129,7 @@ namespace ClipboardUrlSaver
                         }
 
                         // Check for a valid URI
-                        if (Uri.TryCreate(clipboardText, UriKind.Absolute, out var uri) &&
-                            (uri.Scheme == Uri.UriSchemeHttps ||
-                            uri.Scheme == Uri.UriSchemeHttp ||
-                            uri.Scheme == Uri.UriSchemeFtp ||
-                            uri.Scheme == Uri.UriSchemeMailto ||
-                            uri.Scheme == Uri.UriSchemeFile ||
-                            uri.Scheme == Uri.UriSchemeNews ||
-                            uri.Scheme == Uri.UriSchemeNntp ||
-                            uri.Scheme == Uri.UriSchemeGopher ||
-                            uri.Scheme == Uri.UriSchemeNetTcp ||
-                            uri.Scheme == Uri.UriSchemeNetPipe))
+                        if (this.ValidateUri(clipboardText))
                         {
                             // Check for duplicates
                             if (!this.urlCheckedListBox.Items.Contains(clipboardText))
@@ -184,6 +174,27 @@ namespace ClipboardUrlSaver
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
+
+        /// <summary>
+        /// Validates the URI.
+        /// </summary>
+        /// <returns><c>true</c>, if URI was validated, <c>false</c> otherwise.</returns>
+        /// <param name="possibleUri">Possible URI.</param>
+        private bool ValidateUri(string possibleUri)
+        {
+            // Return TryCreate result
+            return (Uri.TryCreate(possibleUri, UriKind.Absolute, out var uri) &&
+                            (uri.Scheme == Uri.UriSchemeHttps ||
+                            uri.Scheme == Uri.UriSchemeHttp ||
+                            uri.Scheme == Uri.UriSchemeFtp ||
+                            uri.Scheme == Uri.UriSchemeMailto ||
+                            uri.Scheme == Uri.UriSchemeFile ||
+                            uri.Scheme == Uri.UriSchemeNews ||
+                            uri.Scheme == Uri.UriSchemeNntp ||
+                            uri.Scheme == Uri.UriSchemeGopher ||
+                            uri.Scheme == Uri.UriSchemeNetTcp ||
+                            uri.Scheme == Uri.UriSchemeNetPipe));
+        }
 
         /// <summary>
         /// Handles the pause/resume button click event.
@@ -383,16 +394,6 @@ namespace ClipboardUrlSaver
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
         private void OpenToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            // TODO Add code
-        }
-
-        /// <summary>
-        /// Handles the save tool strip menu item click event.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnSaveToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO Add code
         }
