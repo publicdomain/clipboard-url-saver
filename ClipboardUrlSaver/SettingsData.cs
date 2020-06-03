@@ -2,6 +2,7 @@
 //     CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication
 //     https://creativecommons.org/publicdomain/zero/1.0/legalcode
 // </copyright>
+using System.Drawing;
 
 namespace ClipboardUrlSaver
 {
@@ -56,5 +57,17 @@ namespace ClipboardUrlSaver
         /// </summary>
         /// <value><c>true</c> if keep list; otherwise, <c>false</c>.</value>
         public bool KeepList { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets the size of the window.
+        /// </summary>
+        /// <value>The size of the window.</value>
+        public Size WindowSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the window location.
+        /// </summary>
+        /// <value>The window location.</value>
+        public Size WindowLocation { get; set; }
     }
 }
