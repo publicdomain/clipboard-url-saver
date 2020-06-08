@@ -2,12 +2,12 @@
 //     CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication
 //     https://creativecommons.org/publicdomain/zero/1.0/legalcode
 // </copyright>
-using System.Drawing;
 
 namespace ClipboardUrlSaver
 {
     // Directives
     using System;
+    using System.Drawing;
 
     /// <summary>
     /// Settings data.
@@ -57,6 +57,12 @@ namespace ClipboardUrlSaver
         /// </summary>
         /// <value><c>true</c> if keep list; otherwise, <c>false</c>.</value>
         public bool KeepList { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> keep size and location.
+        /// </summary>
+        /// <value><c>true</c> if keep size and location; otherwise, <c>false</c>.</value>
+        public bool KeepSizeAndLocation { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the size of the window.

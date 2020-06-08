@@ -76,8 +76,10 @@ namespace ClipboardUrlSaver
         	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.hideCloseButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
         	this.runAtStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.startInTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        	this.keepsizeAndLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
         	this.prefixWithhttpsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.keepListBetweenRunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,8 +89,6 @@ namespace ClipboardUrlSaver
         	this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
         	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
         	this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-        	this.keepsizeAndLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
         	this.notifyContextMenuStrip.SuspendLayout();
         	this.monitorGroupBox.SuspendLayout();
         	this.mainTableLayoutPanel.SuspendLayout();
@@ -152,6 +152,7 @@ namespace ClipboardUrlSaver
         	this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
         	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
         	this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
+        	this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
         	// 
         	// mainNotifyIcon
         	// 
@@ -469,42 +470,56 @@ namespace ClipboardUrlSaver
         	// alwaysOnTopToolStripMenuItem
         	// 
         	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
         	this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.OnAlwaysOnTopToolStripMenuItemClick);
         	// 
         	// hideCloseButtonToolStripMenuItem
         	// 
         	this.hideCloseButtonToolStripMenuItem.Name = "hideCloseButtonToolStripMenuItem";
-        	this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.hideCloseButtonToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.hideCloseButtonToolStripMenuItem.Text = "&Hide close button";
         	this.hideCloseButtonToolStripMenuItem.Click += new System.EventHandler(this.OnHideCloseButtonToolStripMenuItemClick);
+        	// 
+        	// toolStripSeparator5
+        	// 
+        	this.toolStripSeparator5.Name = "toolStripSeparator5";
+        	this.toolStripSeparator5.Size = new System.Drawing.Size(189, 6);
         	// 
         	// runAtStartupToolStripMenuItem
         	// 
         	this.runAtStartupToolStripMenuItem.Name = "runAtStartupToolStripMenuItem";
-        	this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.runAtStartupToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.runAtStartupToolStripMenuItem.Text = "&Run at startup";
         	this.runAtStartupToolStripMenuItem.Click += new System.EventHandler(this.OnRunAtStartupToolStripMenuItemClick);
         	// 
         	// startInTrayToolStripMenuItem
         	// 
         	this.startInTrayToolStripMenuItem.Name = "startInTrayToolStripMenuItem";
-        	this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.startInTrayToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.startInTrayToolStripMenuItem.Text = "&Start in tray";
         	this.startInTrayToolStripMenuItem.Click += new System.EventHandler(this.OnStartInTrayToolStripMenuItemClick);
+        	// 
+        	// keepsizeAndLocationToolStripMenuItem
+        	// 
+        	this.keepsizeAndLocationToolStripMenuItem.Checked = true;
+        	this.keepsizeAndLocationToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.keepsizeAndLocationToolStripMenuItem.Name = "keepsizeAndLocationToolStripMenuItem";
+        	this.keepsizeAndLocationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+        	this.keepsizeAndLocationToolStripMenuItem.Text = "Keep &size and location";
+        	this.keepsizeAndLocationToolStripMenuItem.Click += new System.EventHandler(this.OnKeepsizeAndLocationToolStripMenuItemClick);
         	// 
         	// toolStripSeparator3
         	// 
         	this.toolStripSeparator3.Name = "toolStripSeparator3";
-        	this.toolStripSeparator3.Size = new System.Drawing.Size(201, 6);
+        	this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
         	// 
         	// prefixWithhttpsToolStripMenuItem
         	// 
         	this.prefixWithhttpsToolStripMenuItem.Checked = true;
         	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
-        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
         	this.prefixWithhttpsToolStripMenuItem.Click += new System.EventHandler(this.OnPrefixWithhttpsToolStripMenuItemClick);
         	// 
@@ -513,7 +528,7 @@ namespace ClipboardUrlSaver
         	this.keepListBetweenRunsToolStripMenuItem.Checked = true;
         	this.keepListBetweenRunsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.keepListBetweenRunsToolStripMenuItem.Name = "keepListBetweenRunsToolStripMenuItem";
-        	this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+        	this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.keepListBetweenRunsToolStripMenuItem.Text = "&Keep list between runs";
         	this.keepListBetweenRunsToolStripMenuItem.Click += new System.EventHandler(this.OnKeepListBetweenRunsToolStripMenuItemClick);
         	// 
@@ -558,20 +573,6 @@ namespace ClipboardUrlSaver
         	this.saveHtmlFileDialog.DefaultExt = "html";
         	this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
         	this.saveHtmlFileDialog.Title = "Save HTML file";
-        	// 
-        	// keepsizeAndLocationToolStripMenuItem
-        	// 
-        	this.keepsizeAndLocationToolStripMenuItem.Checked = true;
-        	this.keepsizeAndLocationToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-        	this.keepsizeAndLocationToolStripMenuItem.Name = "keepsizeAndLocationToolStripMenuItem";
-        	this.keepsizeAndLocationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-        	this.keepsizeAndLocationToolStripMenuItem.Text = "Keep &size and location";
-        	this.keepsizeAndLocationToolStripMenuItem.Click += new System.EventHandler(this.OnKeepsizeAndLocationToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator5
-        	// 
-        	this.toolStripSeparator5.Name = "toolStripSeparator5";
-        	this.toolStripSeparator5.Size = new System.Drawing.Size(189, 6);
         	// 
         	// MainForm
         	// 

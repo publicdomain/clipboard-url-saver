@@ -183,7 +183,7 @@ namespace ClipboardUrlSaver
         private bool ValidateUri(string possibleUri)
         {
             // Return TryCreate result
-            return (Uri.TryCreate(possibleUri, UriKind.Absolute, out var uri) &&
+            return Uri.TryCreate(possibleUri, UriKind.Absolute, out var uri) &&
                             (uri.Scheme == Uri.UriSchemeHttps ||
                             uri.Scheme == Uri.UriSchemeHttp ||
                             uri.Scheme == Uri.UriSchemeFtp ||
@@ -193,7 +193,7 @@ namespace ClipboardUrlSaver
                             uri.Scheme == Uri.UriSchemeNntp ||
                             uri.Scheme == Uri.UriSchemeGopher ||
                             uri.Scheme == Uri.UriSchemeNetTcp ||
-                            uri.Scheme == Uri.UriSchemeNetPipe));
+                            uri.Scheme == Uri.UriSchemeNetPipe);
         }
 
         /// <summary>
@@ -492,6 +492,20 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
+        /// Handles the keep size and location tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnKeepsizeAndLocationToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Toggle check state
+            this.keepsizeAndLocationToolStripMenuItem.Checked = !this.keepsizeAndLocationToolStripMenuItem.Checked;
+
+            // Save setting
+            this.settingsData.KeepSizeAndLocation = this.keepsizeAndLocationToolStripMenuItem.Checked;
+        }
+
+        /// <summary>
         /// Handles the prefix https tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
@@ -508,8 +522,8 @@ namespace ClipboardUrlSaver
         /// <summary>
         /// Handles the keep list between runs tool strip menu item click event.
         /// </summary>
-        /// <param name="sender">Sender.</param>
-        /// <param name="e">E.</param>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
         private void OnKeepListBetweenRunsToolStripMenuItemClick(object sender, EventArgs e)
         {
             // Toggle check state
@@ -531,7 +545,7 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Handles the headquarters patreoncom tool strip menu item click event.
+        /// Handles the headquarters Patreon.com tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -542,7 +556,7 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Handles the source code githubcom tool strip menu item click event.
+        /// Handles the source code GitHub.com tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -550,6 +564,17 @@ namespace ClipboardUrlSaver
         {
             // Open GitHub
             Process.Start("https://github.com/publicdomain");
+        }
+
+        /// <summary>
+        /// Handles the original thread DonationCoder.com tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnOriginalThreadDonationCodercomToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Open original thread @ DonationCoder
+            Process.Start("https://www.donationcoder.com/forum/index.php?topic=1813.0");
         }
 
         /// <summary>
