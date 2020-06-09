@@ -52,6 +52,7 @@ namespace ClipboardUrlSaver
         /// <value><c>true</c> if prefix; otherwise, <c>false</c>.</value>
         public bool Prefix { get; set; } = true;
 
+        /* TODO
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:ClipboardUrlSaver.SettingsData"/> keeps URL list between runs.
         /// </summary>
@@ -75,5 +76,6 @@ namespace ClipboardUrlSaver
         /// </summary>
         /// <value>The window location.</value>
         public Size WindowLocation { get; set; }
+        */
     }
 }

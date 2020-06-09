@@ -139,6 +139,9 @@ namespace ClipboardUrlSaver
 
                                 // Increment copy count
                                 this.urlCount++;
+
+                                // Update status
+                                this.UpdateStatus();
                             }
                         }
                     }
@@ -226,6 +229,15 @@ namespace ClipboardUrlSaver
                 // Set button text
                 this.pauseResumeButton.Text = "&Pause";
             }
+        }
+
+        /// <summary>
+        /// Updates the status.
+        /// </summary>
+        private void UpdateStatus()
+        {
+            // Update count
+            this.countToolStripStatusLabel.Text = this.urlCount.ToString();
         }
 
         /// <summary>
@@ -385,7 +397,16 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            /* TODO Perhaps ask user independently from clear button */
+
+            // Hit clear button
+            this.clearButton.PerformClick();
+
+            // Reset URL count
+            this.urlCount = 0;
+
+            // Update status
+            this.UpdateStatus();
         }
 
         /// <summary>
@@ -502,7 +523,7 @@ namespace ClipboardUrlSaver
             this.keepsizeAndLocationToolStripMenuItem.Checked = !this.keepsizeAndLocationToolStripMenuItem.Checked;
 
             // Save setting
-            this.settingsData.KeepSizeAndLocation = this.keepsizeAndLocationToolStripMenuItem.Checked;
+            // TODO this.settingsData.KeepSizeAndLocation = this.keepsizeAndLocationToolStripMenuItem.Checked;
         }
 
         /// <summary>
@@ -530,7 +551,7 @@ namespace ClipboardUrlSaver
             this.keepListBetweenRunsToolStripMenuItem.Checked = !this.keepListBetweenRunsToolStripMenuItem.Checked;
 
             // Save setting
-            this.settingsData.KeepList = this.keepListBetweenRunsToolStripMenuItem.Checked;
+            // TODO this.settingsData.KeepList = this.keepListBetweenRunsToolStripMenuItem.Checked;
         }
 
         /// <summary>
