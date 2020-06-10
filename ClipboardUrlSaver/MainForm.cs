@@ -437,7 +437,28 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnTextToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Set file name
+            this.saveTextFileDialog.FileName = Path.GetFileNameWithoutExtension(this.saveFileTextBox.Text);
+
+            // Open save file dialog
+            if (this.saveTextFileDialog.ShowDialog() == DialogResult.OK && this.saveTextFileDialog.FileName.Length > 0)
+            {
+                /* Save to TEXT */
+
+                try
+                {
+                    // Write URLs
+                    File.WriteAllLines(this.saveTextFileDialog.FileName, this.urlCheckedListBox.Items.Cast<string>());
+                }
+                catch (Exception)
+                {
+                    // Inform user
+                    MessageBox.Show("Save text file error");
+                }
+
+                // Inform user
+                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveTextFileDialog.FileName)}\"");
+            }
         }
 
         /// <summary>
