@@ -457,7 +457,7 @@ namespace ClipboardUrlSaver
                 }
 
                 // Inform user
-                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveTextFileDialog.FileName)}\"");
+                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveHtmlFileDialog.FileName)}\"", "Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -468,7 +468,28 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnHTMLToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Set file name
+            this.saveHtmlFileDialog.FileName = Path.GetFileNameWithoutExtension(this.saveFileTextBox.Text);
+
+            // Open save file dialog
+            if (this.saveHtmlFileDialog.ShowDialog() == DialogResult.OK && this.saveHtmlFileDialog.FileName.Length > 0)
+            {
+                /* Save to HTML */
+
+                try
+                {
+                    // Write URLs
+                    this.SaveUrlHtmlFile(this.saveHtmlFileDialog.FileName);
+                }
+                catch (Exception)
+                {
+                    // Inform user
+                    MessageBox.Show("Save HTML file error");
+                }
+
+                // Inform user
+                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveHtmlFileDialog.FileName)}\"", "HTML", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         /// <summary>
