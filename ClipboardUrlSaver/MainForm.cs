@@ -101,6 +101,15 @@ namespace ClipboardUrlSaver
 
             // Add clipboard listener
             AddClipboardFormatListener(this.Handle);
+
+            /* Start in tray */
+
+            // Check for pertinent setting
+            if (this.settingsData.StartInTray)
+            {
+                // Minimize to tray
+                this.minimizeToolStripMenuItem.PerformClick();
+            }
         }
 
         /// <summary>
@@ -698,7 +707,7 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnMainFormResize(object sender, EventArgs e)
         {
-            // Check for minimized state
+            // TODO Check for minimized state [Can discriminate whether by title bar or added minimize button]
             if (this.WindowState == FormWindowState.Minimized)
             {
                 // Send to the system tray
