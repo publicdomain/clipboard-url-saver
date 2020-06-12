@@ -102,13 +102,41 @@ namespace ClipboardUrlSaver
             // Add clipboard listener
             AddClipboardFormatListener(this.Handle);
 
-            /* Start in tray */
+            /* Initial option processing */
 
-            // Check for pertinent setting
+            // Always on top
+            if (this.settingsData.AlwaysOnTop)
+            {
+                // Click it
+                this.alwaysOnTopToolStripMenuItem.PerformClick();
+            }
+
+            // Hide close button
+            if (this.settingsData.HideCloseButton)
+            {
+                // Click it
+                this.hideCloseButtonToolStripMenuItem.PerformClick();
+            }
+
+            // Run at startup
+            if (this.settingsData.RunAtStartup)
+            {
+                // Click it
+                this.runAtStartupToolStripMenuItem.PerformClick();
+            }
+
+            // Start in tray
             if (this.settingsData.StartInTray)
             {
-                // Minimize to tray
-                this.minimizeToolStripMenuItem.PerformClick();
+                // Click it
+                this.startInTrayToolStripMenuItem.PerformClick();
+            }
+
+            // Prefix with "https://"
+            if (this.settingsData.Prefix)
+            {
+                // Click it
+                this.prefixWithhttpsToolStripMenuItem.PerformClick();
             }
         }
 
@@ -419,11 +447,11 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Opens the tool strip menu item click event.
+        /// Handles the open tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
-        private void OpenToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnOpenToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO Add code
         }
@@ -697,7 +725,12 @@ namespace ClipboardUrlSaver
         /// <param name="e">Event arguments.</param>
         private void OnMainFormShown(object sender, EventArgs e)
         {
-            // TODO Add code
+            // TODO Check if must start in tray [The short amount of time when the program is visible can be removed]
+            if (this.startInTrayToolStripMenuItem.Checked)
+            {
+                // Send to the system tray
+                this.SendToSystemTray();
+            }
         }
 
         /// <summary>

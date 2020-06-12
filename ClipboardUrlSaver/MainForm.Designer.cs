@@ -407,7 +407,7 @@ namespace ClipboardUrlSaver
         	this.openToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
         	this.openToolStripMenuItem.Text = "&Open";
         	this.openToolStripMenuItem.Visible = false;
-        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
+        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OnOpenToolStripMenuItemClick);
         	// 
         	// toolStripSeparator
         	// 
@@ -503,8 +503,6 @@ namespace ClipboardUrlSaver
         	// 
         	// keepsizeAndLocationToolStripMenuItem
         	// 
-        	this.keepsizeAndLocationToolStripMenuItem.Checked = true;
-        	this.keepsizeAndLocationToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.keepsizeAndLocationToolStripMenuItem.Name = "keepsizeAndLocationToolStripMenuItem";
         	this.keepsizeAndLocationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.keepsizeAndLocationToolStripMenuItem.Text = "Keep &size and location";
@@ -518,8 +516,6 @@ namespace ClipboardUrlSaver
         	// 
         	// prefixWithhttpsToolStripMenuItem
         	// 
-        	this.prefixWithhttpsToolStripMenuItem.Checked = true;
-        	this.prefixWithhttpsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.prefixWithhttpsToolStripMenuItem.Name = "prefixWithhttpsToolStripMenuItem";
         	this.prefixWithhttpsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.prefixWithhttpsToolStripMenuItem.Text = "&Prefix with \"https://\"";
@@ -527,8 +523,6 @@ namespace ClipboardUrlSaver
         	// 
         	// keepListBetweenRunsToolStripMenuItem
         	// 
-        	this.keepListBetweenRunsToolStripMenuItem.Checked = true;
-        	this.keepListBetweenRunsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
         	this.keepListBetweenRunsToolStripMenuItem.Name = "keepListBetweenRunsToolStripMenuItem";
         	this.keepListBetweenRunsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
         	this.keepListBetweenRunsToolStripMenuItem.Text = "&Keep list between runs";
