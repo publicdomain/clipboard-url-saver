@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ClipboardUrlSaver")]
+[assembly: AssemblyTitle("Clipboard URL Saver")]
 [assembly: AssemblyDescription("Creates HTML lists from URLs in clipboard.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PublicDomain.com")]

@@ -18,6 +18,7 @@ namespace ClipboardUrlSaver
     using System.Windows.Forms;
     using System.Xml.Serialization;
     using Microsoft.Win32;
+    using PublicDomain;
 
     /// <summary>
     /// Description of MainForm.
@@ -40,24 +41,9 @@ namespace ClipboardUrlSaver
         private SettingsData settingsData = new SettingsData();
 
         /// <summary>
-        /// The assembly version.
-        /// </summary>
-        private Version assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
-
-        /// <summary>
-        /// The semantic version.
-        /// </summary>
-        private string semanticVersion = string.Empty;
-
-        /// <summary>
         /// The associated icon.
         /// </summary>
         private Icon associatedIcon = null;
-
-        /// <summary>
-        /// The friendly name of the program.
-        /// </summary>
-        private string friendlyName = "Clipboard URL saver";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:ClipboardUrlSaver.MainForm"/> class.
@@ -69,9 +55,6 @@ namespace ClipboardUrlSaver
 
             // Set notify icon
             this.mainNotifyIcon.Icon = this.Icon;
-
-            // Set semantic version
-            this.semanticVersion = this.assemblyVersion.Major + "." + this.assemblyVersion.Minor + "." + this.assemblyVersion.Build;
 
             // TODO Set current directory [can be made conditional to: args[1] == "/autostart"]
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
@@ -494,7 +477,7 @@ namespace ClipboardUrlSaver
                 }
 
                 // Inform user
-                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveHtmlFileDialog.FileName)}\"", "Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Saved to \"{Path.GetFileName(this.saveTextFileDialog.FileName)}\"", "Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -884,6 +867,63 @@ namespace ClipboardUrlSaver
                 // Return populated settings data
                 return xmlSerializer.Deserialize(fileStream) as SettingsData;
             }
+        }
+
+        /// <summary>
+        /// Handles the about tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Set license text
+            var licenseText = $"CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication{Environment.NewLine}" +
+                $"https://creativecommons.org/publicdomain/zero/1.0/legalcode{Environment.NewLine}{Environment.NewLine}" +
+                $"Libraries and icons have separate licenses.{Environment.NewLine}{Environment.NewLine}" +
+                $"Survey icon by mcmurryjulie - Pixabay License{Environment.NewLine}" +
+                $"https://pixabay.com/vectors/survey-icon-survey-icon-2316468/{Environment.NewLine}{Environment.NewLine}" +
+                $"Minimize icon by Gregor Cresnar from www.flaticon.com{Environment.NewLine}" +
+                $"https://www.flaticon.com/authors/gregor-cresnar{Environment.NewLine}{Environment.NewLine}" +
+                $"Patreon icon used according to published brand guidelines{Environment.NewLine}" +
+                $"https://www.patreon.com/brand{Environment.NewLine}{Environment.NewLine}" +
+                $"GitHub mark icon used according to published logos and usage guidelines{Environment.NewLine}" +
+                $"https://github.com/logos{Environment.NewLine}{Environment.NewLine}" +
+                $"DonationCoder icon used with permission{Environment.NewLine}" +
+                $"https://www.donationcoder.com/forum/index.php?topic=48718{Environment.NewLine}{Environment.NewLine}" +
+                $"PublicDomain icon is based on the following source images:{Environment.NewLine}{Environment.NewLine}" +
+                $"Bitcoin by GDJ - Pixabay License{Environment.NewLine}" +
+                $"https://pixabay.com/vectors/bitcoin-digital-currency-4130319/{Environment.NewLine}{Environment.NewLine}" +
+                $"Letter P by ArtsyBee - Pixabay License{Environment.NewLine}" +
+                $"https://pixabay.com/illustrations/p-glamour-gold-lights-2790632/{Environment.NewLine}{Environment.NewLine}" +
+                $"Letter D by ArtsyBee - Pixabay License{Environment.NewLine}" +
+                $"https://pixabay.com/illustrations/d-glamour-gold-lights-2790573/{Environment.NewLine}{Environment.NewLine}";
+
+            // Set title
+            string programTitle = typeof(MainForm).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyTitleAttribute>().Title;
+
+            // Set version for generating semantic version 
+            Version version = typeof(MainForm).GetTypeInfo().Assembly.GetName().Version;
+
+            // Set about form
+            var aboutForm = new AboutForm(
+                $"About {programTitle}",
+                $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
+                $"Made for: Ace_NoOne, smaragdus{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #166, Week #24 @ June 2020",
+                licenseText,
+                this.Icon.ToBitmap());
+
+            // Check for an associated icon
+            if (this.associatedIcon == null)
+            {
+                // Set associated icon from exe file, once
+                this.associatedIcon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+            }
+
+            // Set about form icon
+            aboutForm.Icon = this.associatedIcon;
+
+            // Show about form
+            aboutForm.ShowDialog();
         }
     }
 }
