@@ -19,5 +19,7 @@ v0.1.0 notes:
 - Launch program on start.
 - Append "https://" to copied URLs.
 
-Enjoy more daily releases @ our website:
+Requires Microsoft .NET framework v4.5 (Native to Windows 8+)
+
+Enjoy more **daily** releases @ our website:
 [https://publicdomaindaily.com](https://publicdomaindaily.com)

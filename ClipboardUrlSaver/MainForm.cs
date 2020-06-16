@@ -53,6 +53,12 @@ namespace ClipboardUrlSaver
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
 
+            // Set associated icon from exe file
+            this.associatedIcon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+
+            // Set daily releases icon
+            this.dailyReleasesPublicDomainDailycomToolStripMenuItem.Image = this.associatedIcon.ToBitmap();
+
             // Set notify icon
             this.mainNotifyIcon.Icon = this.Icon;
 
@@ -628,14 +634,14 @@ namespace ClipboardUrlSaver
         }
 
         /// <summary>
-        /// Handles the headquarters Patreon.com tool strip menu item click event.
+        /// Handles the daily releases public domain dailycom tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
-        private void OnHeadquartersPatreoncomToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnDailyReleasesPublicDomainDailycomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // Open Patreon headquarters
-            Process.Start("https://www.patreon.com/publicdomain");
+            // Open current website
+            Process.Start("https://publicdomaindaily.com");
         }
 
         /// <summary>
@@ -908,27 +914,15 @@ namespace ClipboardUrlSaver
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: Ace_NoOne, smaragdus{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #166, Week #24 @ June 2020",
+                $"Made for: Ace_NoOne, smaragdus{Environment.NewLine}DonationCoder.com{Environment.NewLine}Day #168, Week #25 @ June 2020",
                 licenseText,
                 this.Icon.ToBitmap());
-
-            // Check for an associated icon
-            if (this.associatedIcon == null)
-            {
-                // Set associated icon from exe file, once
-                this.associatedIcon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
-            }
 
             // Set about form icon
             aboutForm.Icon = this.associatedIcon;
 
             // Show about form
             aboutForm.ShowDialog();
-        }
-        
-        void OnDailyReleasesPublicDomainDailycomToolStripMenuItemClick(object sender, EventArgs e)
-        {
-        	
         }
     }
 }
