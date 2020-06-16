@@ -43,7 +43,6 @@ namespace ClipboardUrlSaver
         	this.notifyExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
         	this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
         	this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -61,7 +60,6 @@ namespace ClipboardUrlSaver
         	this.clearButton = new System.Windows.Forms.Button();
         	this.deleteCheckedButton = new System.Windows.Forms.Button();
         	this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.headquartersPatreoncomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
         	this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +87,7 @@ namespace ClipboardUrlSaver
         	this.saveTextFileDialog = new System.Windows.Forms.SaveFileDialog();
         	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
         	this.saveHtmlFileDialog = new System.Windows.Forms.SaveFileDialog();
+        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         	this.notifyContextMenuStrip.SuspendLayout();
         	this.monitorGroupBox.SuspendLayout();
         	this.mainTableLayoutPanel.SuspendLayout();
@@ -133,25 +132,20 @@ namespace ClipboardUrlSaver
         	// aboutToolStripMenuItem
         	// 
         	this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        	this.aboutToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+        	this.aboutToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
         	this.aboutToolStripMenuItem.Text = "&About...";
         	this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator1
-        	// 
-        	this.toolStripSeparator1.Name = "toolStripSeparator1";
-        	this.toolStripSeparator1.Size = new System.Drawing.Size(275, 6);
         	// 
         	// toolStripSeparator2
         	// 
         	this.toolStripSeparator2.Name = "toolStripSeparator2";
-        	this.toolStripSeparator2.Size = new System.Drawing.Size(275, 6);
+        	this.toolStripSeparator2.Size = new System.Drawing.Size(286, 6);
         	// 
         	// originalThreadDonationCodercomToolStripMenuItem
         	// 
         	this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
         	this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+        	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
         	this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
         	this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
         	// 
@@ -340,25 +334,16 @@ namespace ClipboardUrlSaver
         	// 
         	this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
         	this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
-        	this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+        	this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
         	this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
         	this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
-        	// 
-        	// headquartersPatreoncomToolStripMenuItem
-        	// 
-        	this.headquartersPatreoncomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("headquartersPatreoncomToolStripMenuItem.Image")));
-        	this.headquartersPatreoncomToolStripMenuItem.Name = "headquartersPatreoncomToolStripMenuItem";
-        	this.headquartersPatreoncomToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
-        	this.headquartersPatreoncomToolStripMenuItem.Text = "Headquarters @ Patreon.com";
-        	this.headquartersPatreoncomToolStripMenuItem.Click += new System.EventHandler(this.OnHeadquartersPatreoncomToolStripMenuItemClick);
         	// 
         	// helpToolStripMenuItem
         	// 
         	this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.headquartersPatreoncomToolStripMenuItem,
-        	        	        	this.sourceCodeGithubcomToolStripMenuItem,
-        	        	        	this.toolStripSeparator1,
+        	        	        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem,
         	        	        	this.originalThreadDonationCodercomToolStripMenuItem,
+        	        	        	this.sourceCodeGithubcomToolStripMenuItem,
         	        	        	this.toolStripSeparator2,
         	        	        	this.aboutToolStripMenuItem});
         	this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -572,6 +557,13 @@ namespace ClipboardUrlSaver
         	this.saveHtmlFileDialog.Filter = "HTML Files|*.htm;*.html|All files (*.*)|*.*";
         	this.saveHtmlFileDialog.Title = "Save HTML file";
         	// 
+        	// dailyReleasesPublicDomainDailycomToolStripMenuItem
+        	// 
+        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem.Name = "dailyReleasesPublicDomainDailycomToolStripMenuItem";
+        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
+        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem.Text = "Daily releases @ PublicDomainDaily.com";
+        	this.dailyReleasesPublicDomainDailycomToolStripMenuItem.Click += new System.EventHandler(this.OnDailyReleasesPublicDomainDailycomToolStripMenuItemClick);
+        	// 
         	// MainForm
         	// 
         	this.AcceptButton = this.pauseResumeButton;
@@ -603,6 +595,7 @@ namespace ClipboardUrlSaver
         	this.ResumeLayout(false);
         	this.PerformLayout();
         }
+        private System.Windows.Forms.ToolStripMenuItem dailyReleasesPublicDomainDailycomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keepsizeAndLocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem keepListBetweenRunsToolStripMenuItem;
@@ -632,7 +625,6 @@ namespace ClipboardUrlSaver
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem headquartersPatreoncomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sourceCodeGithubcomToolStripMenuItem;
         private System.Windows.Forms.TextBox saveFileTextBox;
         private System.Windows.Forms.Button openButton;
@@ -645,7 +637,6 @@ namespace ClipboardUrlSaver
         private System.Windows.Forms.NotifyIcon mainNotifyIcon;
         private System.Windows.Forms.ToolStripMenuItem originalThreadDonationCodercomToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notifyExitToolStripMenuItem;

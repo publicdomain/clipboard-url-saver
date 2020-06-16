@@ -925,5 +925,10 @@ namespace ClipboardUrlSaver
             // Show about form
             aboutForm.ShowDialog();
         }
+        
+        void OnDailyReleasesPublicDomainDailycomToolStripMenuItemClick(object sender, EventArgs e)
+        {
+        	
+        }
     }
 }
