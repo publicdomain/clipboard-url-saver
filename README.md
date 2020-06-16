@@ -1,7 +1,7 @@
 # Clipboard URL saver
 Creates HTML lists from URLs in clipboard.
 
-![Clipboard URL saver image](https://user-images.githubusercontent.com/54631779/73240789-6c786f80-4176-11ea-9b26-2b8a67a1d94f.png)
+![Clipboard URL saver image](https://user-images.githubusercontent.com/54631779/84763924-ecbf3600-af9a-11ea-9d23-1c9d989b75b2.png)
 
 Made for **Ace_NoOne, smaragdus** from [donationcoder.com](https://www.donationcoder.com).
 
